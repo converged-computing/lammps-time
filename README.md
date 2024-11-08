@@ -1,7 +1,9 @@
 # LAMMPS over Time
 
 Let's try to build LAMMPS, specifically the reax app, over time, and see how it changes.
-We will use the same Dockerfile with different versions to clone.
+We will use the same Dockerfile with different versions to clone. This top level directory will
+build lammps base containers, and [fuse](fuse) will provide logic to install fuse and proot
+for recording.
 
 # Building Containers
 
