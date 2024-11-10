@@ -86,7 +86,9 @@ def main():
         fs.insert(path, count=count)
 
     # Generate graph. This adds to matplotlib context
-    fs.get_graph(title=f"Filesystem Recording Trie for {args.name} Top {args.n} Recorded Paths")
+    fs.get_graph(
+        title=f"Filesystem Recording Trie for {args.name} Top {args.n} Recorded Paths"
+    )
     plot_path = os.path.join(
         args.outdir, f"{args.name}-top-{args.n}-recorded-paths-trie.png"
     )

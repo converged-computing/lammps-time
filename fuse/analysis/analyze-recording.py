@@ -42,15 +42,13 @@ def main():
     print(sims)
 
     # Clean up release names
-    sims.index = [x.replace(".out", "").replace('lammps-', '') for x in sims.index]
-    sims.columns = [x.replace(".out", "").replace('lammps-', '') for x in sims.columns]
-    plt.figure(figsize=(20, 20))    
+    sims.index = [x.replace(".out", "").replace("lammps-", "") for x in sims.index]
+    sims.columns = [x.replace(".out", "").replace("lammps-", "") for x in sims.columns]
+    plt.figure(figsize=(20, 20))
     sns.clustermap(sims.astype(float), mask=(sims == 0.0), cmap="crest")
 
     # Save all the things!
-    plot_path = os.path.join(
-        args.outdir, f"{args.name}-levenstein-distance-matrix.png"
-    )
+    plot_path = os.path.join(args.outdir, f"{args.name}-levenstein-distance-matrix.png")
     title = f"Levenstein Distance of File Access for 86 Recorded {args.name} Release Runs (2019-2024)"
     plt.title(title.rjust(200), fontsize=10)
     plt.tight_layout()

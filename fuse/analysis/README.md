@@ -69,7 +69,11 @@ This took me two hours to write the code for - I wanted the colors to correspond
 
 ### 4. Output changes
 
-Haven't written this yet!
+There probably isn't an interesting story here, but I thought I'd parse anyway. I'm running this on my local machine (one node) so it's pretty tiny :)
+
+![data/img/lammps-reax-wall_time-2x2x2-6.png](data/img/lammps-reax-wall_time-2x2x2-6.png)
+![data/img/lammps-reax-wall_time-2x2x2-6.png](data/img/lammps-reax-wall_time-2x2x2-6.png)
+![data/img/lammps-reax-wall_time-2x2x2-6.png](data/img/lammps-reax-wall_time-2x2x2-6.png)
 
 ### 5. Create Features to Describe Patterns
 
