@@ -17,12 +17,13 @@ class Event:
 class Traces:
     """
     A Set of traces to operate on.
+
+    Lookup: is typically only done once
+    Open: is when the file is read
     """
 
-    def __init__(self, files=None, operation="Lookup"):
+    def __init__(self, files=None):
         self.files = files or []
-        # What kind of trace (function call) to parse
-        self.operation = operation
         self.check()
 
     def count(self):
@@ -40,7 +41,7 @@ class Traces:
             events.append(filename)
         self.files = events
 
-    def iter_events(self):
+    def iter_events(self, operation="Open"):
         """
         Iterate through files and yield event object
         """
@@ -52,22 +53,23 @@ class Traces:
                 # date, time, golang-file  timestamp function path
                 # 2024/11/08 10:46:19 recorder.go:46: 1731062779714551943 Lookup     /etc
                 parts = [x for x in line.split() if x]
-                if parts[-2] != self.operation:
+                if parts[-2] != operation:
                     continue
                 yield Event(
-                    filename=basename,
+                    filename=filename,
+                    basename=basename,
                     function=parts[-2],
                     path=parts[-1],
                     timestamp=int(parts[-3]),
                 )
 
-    def to_dataframe(self):
+    def to_dataframe(self, operation="Open"):
         """
         Create a data frame of lookup values, we can save for later and derive paths from it
         """
         df = pandas.DataFrame(columns=["filename", "function", "path", "timestamp"])
         idx = 0
-        for event in self.iter_events():
+        for event in self.iter_events(operation=operation):
             df.loc[idx, :] = [
                 event.filename,
                 event.function,
@@ -77,11 +79,11 @@ class Traces:
             idx += 1
         return df
 
-    def distance_matrix(self):
+    def distance_matrix(self, operation="Open"):
         """
         Generate pairwise distance matrix for paths
         """
-        lookup = self.as_paths()
+        lookup = self.as_paths(operation=operation)
         names = list(lookup.keys())
         df = pandas.DataFrame(index=names, columns=names)
         for filename1 in names:
@@ -94,15 +96,48 @@ class Traces:
                 df.loc[filename2, filename1] = distance
         return df
 
-    def as_paths(self):
+    def as_paths(self, fullpath=False, operation="Open"):
         """
         Return lists of paths (lookup) corresponding to traces.
         """
         lookup = {}
-        for event in self.iter_events():
+        for event in self.iter_events(operation=operation):
+            key = event.basename
+            if fullpath:
+                key = event.filename
+            if key not in lookup:
+                lookup[key] = []
+            lookup[key].append(event.path)
+        return lookup
+
+    def all_counts(self, operation="Open"):
+        """
+        Return lookup of all counts corresponding to traces.
+
+        Since we just have one lookup, this one is returned
+        sorted.
+        """
+        lookup = {}
+        for event in self.iter_events(operation=operation):
+            if event.path not in lookup:
+                lookup[event.path] = 0
+            lookup[event.path] += 1
+        return dict(sorted(lookup.items(), key=lambda item: item[1], reverse=True))
+
+    def as_counts(self, fullpath=False, operation="Open"):
+        """
+        Return lookup of counts corresponding to traces.
+        """
+        lookup = {}
+        for event in self.iter_events(operation=operation):
+            key = event.basename
+            if fullpath:
+                key = event.filename
             if event.filename not in lookup:
-                lookup[event.filename] = []
-            lookup[event.filename].append(event.path)
+                lookup[key] = {}
+            if event.path not in lookup[key]:
+                lookup[key][event.path] = 0
+            lookup[key][event.path] += 1
         return lookup
 
 
