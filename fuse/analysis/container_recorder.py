@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
-import pandas
 import os
+import sys
+
+import matplotlib.pylab as plt
+import networkx as nx
+import pandas
+import seaborn as sns
+from matplotlib.colors import TwoSlopeNorm
 
 
 class Event:
@@ -12,6 +18,134 @@ class Event:
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+
+class INode:
+    """
+    An INode is part of a Filesystem Trie
+    We keep track of a count since we are going to use
+    this to plot frequency of access.
+    """
+
+    def __init__(self, name, count=0):
+        self.children = {}
+        self.name = name
+        self.count = count
+
+    @property
+    def basename(self):
+        return os.path.basename(self.name) or os.sep
+
+    @property
+    def label(self):
+        if self.count == 0:
+            return self.basename
+        return f"{self.basename}\n{self.count}"
+
+    def increment(self, count):
+        self.count += count
+
+
+class Filesystem:
+    """
+    A Filesystem is a Trie of nodes
+    """
+
+    def __init__(self):
+        self.root = INode(os.sep)
+        self.min_count = 0
+        self.max_count = 0
+
+    def get_graph(
+        self, node_color="skyblue", font_size=10, tree=True, node_size=1500, title=None
+    ):
+        """
+        Get a plot for a trie
+        """
+        plt.figure(figsize=(20, 8))
+        graph = nx.DiGraph()
+
+        # Recursive function to walk through root, etc.
+        # We also return
+        color_counts = {}
+        get_counts(counts=color_counts, node=self.root)
+        add_to_graph(graph=graph, root=self.root, node=self.root)
+
+        # Color based on count
+        colors = derive_node_colors(
+            min_count=self.min_count, max_count=self.max_count + 1
+        )
+
+        # We only want to get colors that match the count, so the scale is relevant
+        node_colors = []
+
+        # Also update node labels to show count
+        new_labels = {}
+        for i, node in enumerate(graph.nodes):
+            if node == "/":
+                count = 0
+                new_labels[node] = node
+            else:
+                count = color_counts[node]
+                new_labels[node] = f"{node}\n{count}"
+            node_colors.append(colors[count])
+
+        # Tree visualization (much better) requires graphviz, dot, etc.
+        if tree:
+            try:
+                pos = nx.nx_agraph.graphviz_layout(graph, prog="dot")
+            except:
+                sys.exit("conda install --channel conda-forge pygraphviz")
+        else:
+            pos = nx.spring_layout(graph)
+
+        # This will plot, and the user can call plt.show() or plt.savefig()
+        title = title or "Filesystem Recording Trie"
+        plt.title(title)
+        nx.draw(
+            graph,
+            pos,
+            with_labels=False,
+            node_size=node_size,
+            node_color=node_colors,
+            font_size=font_size,
+        )
+
+        # Update and rotate the labels a bit
+        for node, (x, y) in pos.items():
+            plt.text(x, y, new_labels[str(node)], rotation=45, ha="center", va="center")
+        plt.tight_layout()
+        return graph
+
+    def insert(self, path, count=0):
+        """
+        Insert an INode into the filesystem.
+
+        If we are adding a count, increment by it.
+        """
+        node = self.root
+        for part in path.split(os.sep):
+            if part not in node.children:
+                node.children[part] = INode(path)
+            node = node.children[part]
+        node.increment(count)
+
+        # Update counts
+        if node.count < self.min_count:
+            self.min_count = node.count
+        if node.count > self.max_count:
+            self.max_count = node.count
+
+    def find(self, path):
+        """
+        Search the filesystem for a path
+        """
+        node = self.root
+        for part in path.split(os.sep):
+            if part not in node.children:
+                return
+            node = node.children[part]
+        return node
 
 
 class Traces:
@@ -145,6 +279,43 @@ def read_file(filename):
     with open(filename, "r") as fd:
         content = fd.read()
     return content
+
+
+# Plotting helpers
+
+
+def add_to_graph(graph, root, node, parent=None):
+    """
+    Helper function to add node to graph
+    """
+    if node != root:
+        # This is probably a bug, just skip for now
+        if node.basename != parent.basename:
+            graph.add_edge(parent.basename, node.basename)
+    for path, child in node.children.items():
+        add_to_graph(graph=graph, root=root, node=child, parent=node)
+
+
+def derive_node_colors(min_count, max_count, start=0, end=150):
+    """
+    Given the min, max, and a center, return a range of colors
+    """
+    palette = sns.diverging_palette(start, end, n=256, as_cmap=True)
+    center = int(abs(max_count - min_count) / 2)
+    norm = TwoSlopeNorm(vmin=min_count, vcenter=center, vmax=max_count)
+    return [palette(norm(c)) for c in range(min_count, max_count)]
+
+
+def get_counts(counts={}, node=None):
+    """
+    Get a flat list of counts
+    """
+    for path, child in node.children.items():
+        counts[path] = child.count
+        get_counts(counts, child)
+
+
+# Alignment helpers
 
 
 def align_paths(paths1, paths2, match_score=1, mismatch_score=-1, gap_penalty=-1):

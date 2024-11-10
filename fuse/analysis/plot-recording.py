@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 
-import pandas
 import argparse
-import matplotlib.pylab as plt
-import seaborn as sns
-import sys
 import os
+import sys
+
+import matplotlib.pylab as plt
+import pandas
+import seaborn as sns
 
 here = os.path.dirname(__file__)
 sys.path.insert(0, here)
-from container_recorder import Traces
+from container_recorder import Filesystem, Traces
 
 
 def get_parser():
@@ -62,17 +63,40 @@ def main():
             single_trace[k] = v
         df.loc[path] = single_trace
 
-    plt.figure(figsize=(20, 18))
+    plt.figure(figsize=(20, 12))
     sns.heatmap(df, mask=(df == 0.0), cmap="crest", annot=df)
 
     # Save all the things!
     plot_path = os.path.join(
         args.outdir, f"{args.name}-top-{args.n}-recorded-paths.png"
     )
-    plt.title(f"{args.name} Top (N={args.n}) Recorded Paths", fontsize=16)
+    plt.title(f"{args.name} Top (N={args.n}) Recorded Paths", fontsize=10)
     plt.tight_layout()
     plt.savefig(plot_path)
     plt.close()
+
+    # Next, let's create a plot across binaries of a Trie
+    fs = Filesystem()
+    for i, (path, count) in enumerate(counts.items()):
+        # Only plot top N requested by user
+        if i > args.n:
+            break
+        fs.insert(path, count=count)
+
+    # Generate graph. This adds to matplotlib context
+    fs.get_graph()
+    plot_path = os.path.join(
+        args.outdir, f"{args.name}-top-{args.n}-recorded-paths-trie.png"
+    )
+    plt.savefig(plot_path)
+
+    # How to interact with fs
+    # This path is not in the top 10, so will return None
+    inode = fs.find("/opt/lammps/examples/reaxff/HNS/in.reaxff.hns")
+
+    # This path IS in the top 10, so we get a node back
+    inode = fs.find("/opt/lammps/examples/reaxff/HNS/ffield.reax.hns")
+    print(f"{inode.name} is recorded {inode.count} times across recordings.")
 
 
 if __name__ == "__main__":

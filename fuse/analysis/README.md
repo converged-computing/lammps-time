@@ -39,6 +39,16 @@ This will be more interesting when we have more than 2 (actually different) vers
 
 ![img/LAMMPS-top-20-recorded-paths.png](img/LAMMPS-top-20-recorded-paths.png )
 
+We also generate a Trie. For the tree you need pygraphviz:
+
+```bash
+conda install --channel conda-forge pygraphviz
+```
+
+This took me two hours to write the code for - I wanted the colors to correspond to counts, and be relative to one another, and for the labels to be rotated. Worth it!
+
+![img/LAMMPS-top-20-recorded-paths-trie.png](img/LAMMPS-top-20-recorded-paths-trie.png )
+
 ### 3. Trie to Describe patterns
 
 ### 4. Create Features to Describe Patterns
