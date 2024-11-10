@@ -1,0 +1,164 @@
+⭐️ Filesystem Recorder (fs-record)
+Mount directory /tmp/compatlib2238907877
+Mounted!
+proot -S /tmp/compatlib2238907877 -0 lmp -v x 2 -v y 2 -v z 2 -in ./in.reaxc.hns -nocite
+CUSTOM OPEN FOR /usr/bin/lmp with flags 32768
+CUSTOM OPEN FOR /usr/bin/lmp with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 with flags 32768
+CUSTOM OPEN FOR /usr/bin/lmp with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libm.so.6 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libc.so.6 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/libpsm1/libpsm_infinipath.so.1.16 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/librt.so.1 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libpthread.so.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libdl.so.2 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libz.so.1.2.11 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libicudata.so.70.1 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5 with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1 with flags 32768
+CUSTOM OPEN FOR /etc/gai.conf with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+CUSTOM OPEN FOR /etc/ld.so.cache with flags 32768
+WARNING on proc 0: Cannot open log.lammps for writing: Read-only file system (src/lammps.cpp:476)
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/in.reaxc.hns with flags 32768
+LAMMPS (29 Sep 2021)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/data.hns-equil with flags 32768
+Reading data file ...
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/data.hns-equil with flags 32768
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (22.326000 11.141200 13.778966) with tilt (0.0000000 -5.0260300 0.0000000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  304 atoms
+  reading velocities ...
+  304 velocities
+  read_data CPU = 0.003 seconds
+Replicating atoms ...
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (44.652000 22.282400 27.557932) with tilt (0.0000000 -10.052060 0.0000000)
+  1 by 1 by 1 MPI processor grid
+  bounding box image = (0 -1 -1) to (0 1 1)
+  bounding box extra memory = 0.03 MB
+  average # of replicas added to proc = 8.00 out of 8 (100.00%)
+  2432 atoms
+  replicate CPU = 0.001 seconds
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/ffield.reax.hns with flags 32768
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/ffield.reax.hns with flags 32768
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/ffield.reax.hns with flags 32768
+CUSTOM OPEN FOR /opt/lammps/examples/reaxff/HNS/ffield.reax.hns with flags 32768
+Neighbor list info ...
+  update every 20 steps, delay 0 steps, check no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 11
+  ghost atom cutoff = 11
+  binsize = 5.5, bins = 10 5 6
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair reax/c, perpetual
+      attributes: half, newton off, ghost
+      pair build: half/bin/newtoff/ghost
+      stencil: full/ghost/bin/3d
+      bin: standard
+  (2) fix qeq/reax, perpetual, copy from (1)
+      attributes: half, newton off, ghost
+      pair build: copy
+      stencil: none
+      bin: none
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 0.1
+Per MPI rank memory allocation (min/avg/max) = 215.0 | 215.0 | 215.0 Mbytes
+Step Temp PotEng Press E_vdwl E_coul Volume 
+       0          300   -113.27833    437.52122   -111.57687   -1.7014647    27418.867 
+      10    299.38517   -113.27631    1439.2857   -111.57492   -1.7013813    27418.867 
+      20    300.27107   -113.27884    3764.3739   -111.57762   -1.7012246    27418.867 
+      30    302.21063   -113.28428    7007.6914   -111.58335   -1.7009363    27418.867 
+      40    303.52265   -113.28799      9844.84   -111.58747   -1.7005186    27418.867 
+      50    301.87059   -113.28324    9663.0443   -111.58318   -1.7000524    27418.867 
+      60    296.67807   -113.26777    7273.7928   -111.56815   -1.6996137    27418.867 
+      70    292.19999   -113.25435    5533.6428   -111.55514   -1.6992157    27418.867 
+      80    293.58677   -113.25831    5993.4151   -111.55946   -1.6988533    27418.867 
+      90    300.62636   -113.27925    7202.8651   -111.58069   -1.6985591    27418.867 
+     100    305.38276   -113.29357    10085.748   -111.59518   -1.6983875    27418.867 
+Loop time of 15.6528 on 1 procs for 100 steps with 2432 atoms
+
+Performance: 0.055 ns/day, 434.799 hours/ns, 6.389 timesteps/s
+99.8% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 11.468     | 11.468     | 11.468     |   0.0 | 73.27
+Neigh   | 0.20439    | 0.20439    | 0.20439    |   0.0 |  1.31
+Comm    | 0.0068242  | 0.0068242  | 0.0068242  |   0.0 |  0.04
+Output  | 0.0011131  | 0.0011131  | 0.0011131  |   0.0 |  0.01
+Modify  | 3.9713     | 3.9713     | 3.9713     |   0.0 | 25.37
+Other   |            | 0.0006097  |            |       |  0.00
+
+Nlocal:        2432.00 ave        2432 max        2432 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:        10685.0 ave       10685 max       10685 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:        823958.0 ave      823958 max      823958 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 823958
+Ave neighs/atom = 338.79852
+Neighbor list builds = 5
+Dangerous builds not checked
+Total wall time: 0:00:16
+Command is done running
+Cleaning up /tmp/compatlib2238907877...
+Output file written to /compat/lammps-patch_29Sep2021.out

@@ -24,6 +24,7 @@ done
 ```
 
 Now do builds from the tags. We are first going to try and build as many as we can with cmake.
+Note that we have added the `USER-REAXC` and it is needed started at patch_27May2021.
 
 ```bash
 for filename in $(ls ./releases)

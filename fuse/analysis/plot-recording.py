@@ -63,14 +63,16 @@ def main():
             single_trace[k] = v
         df.loc[path] = single_trace
 
-    plt.figure(figsize=(20, 12))
-    sns.heatmap(df, mask=(df == 0.0), cmap="crest", annot=df)
+    plt.figure(figsize=(20, 20))
+    df.index = [os.path.basename(x) for x in df.index]
+    sns.clustermap(df, mask=(df == 0.0), cmap="crest")
 
     # Save all the things!
     plot_path = os.path.join(
         args.outdir, f"{args.name}-top-{args.n}-recorded-paths.png"
     )
-    plt.title(f"{args.name} Top (N={args.n}) Recorded Paths", fontsize=10)
+    title = f"{args.name} Top (N={args.n}) Recorded Paths"
+    plt.title(title.rjust(70), fontsize=10)
     plt.tight_layout()
     plt.savefig(plot_path)
     plt.close()
@@ -84,7 +86,7 @@ def main():
         fs.insert(path, count=count)
 
     # Generate graph. This adds to matplotlib context
-    fs.get_graph()
+    fs.get_graph(title=f"Filesystem Recording Trie for {args.name} Top {args.n} Recorded Paths")
     plot_path = os.path.join(
         args.outdir, f"{args.name}-top-{args.n}-recorded-paths-trie.png"
     )

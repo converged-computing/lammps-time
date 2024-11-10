@@ -226,8 +226,8 @@ class Traces:
                     continue
                 aligned1, aligned2 = align_paths(lookup[filename1], lookup[filename2])
                 distance = calculate_levenshtein(aligned1, aligned2)
-                df.loc[filename1, filename2] = distance
-                df.loc[filename2, filename1] = distance
+                df.loc[filename1, filename2] = float(distance)
+                df.loc[filename2, filename1] = float(distance) 
         return df
 
     def as_paths(self, fullpath=False, operation="Open"):
@@ -398,8 +398,8 @@ def calculate_levenshtein(paths1, paths2):
         for j in range(1, len2 + 1):
             cost = 0 if paths1[i - 1] == paths2[j - 1] else 1
             matrix[i][j] = min(
-                matrix[i - 1][j] + 1,  # Deletion
-                matrix[i][j - 1] + 1,  # Insertion
+                matrix[i - 1][j] + 1,         # Deletion
+                matrix[i][j - 1] + 1,         # Insertion
                 matrix[i - 1][j - 1] + cost,  # Substitution
             )
     return matrix[-1][-1]

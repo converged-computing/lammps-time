@@ -3,6 +3,8 @@
 import argparse
 import os
 import sys
+import seaborn as sns
+import matplotlib.pylab as plt
 
 here = os.path.dirname(__file__)
 sys.path.insert(0, here)
@@ -19,6 +21,12 @@ def get_parser():
         "--outfile",
         help="Output file for results",
     )
+    parser.add_argument(
+        "--outdir",
+        help="Output directory for images",
+        default=os.path.join(here, "img"),
+    )
+    parser.add_argument("--name", help="Application name", default="LAMMPS")
     return parser
 
 
@@ -32,6 +40,24 @@ def main():
     df.to_csv("testing-lammps-same.csv")
     sims = simcalc.distance_matrix()
     print(sims)
+
+    # Clean up release names
+    sims.index = [x.replace(".out", "").replace('lammps-', '') for x in sims.index]
+    sims.columns = [x.replace(".out", "").replace('lammps-', '') for x in sims.columns]
+    plt.figure(figsize=(20, 20))    
+    sns.clustermap(sims.astype(float), mask=(sims == 0.0), cmap="crest")
+
+    # Save all the things!
+    plot_path = os.path.join(
+        args.outdir, f"{args.name}-levenstein-distance-matrix.png"
+    )
+    title = f"Levenstein Distance of File Access for 86 Recorded {args.name} Release Runs (2019-2024)"
+    plt.title(title.rjust(200), fontsize=10)
+    plt.tight_layout()
+    plt.xlabel("Release Tag")
+    plt.ylabel("Release Tag")
+    plt.savefig(plot_path)
+    plt.close()
 
 
 if __name__ == "__main__":
