@@ -77,10 +77,16 @@ There probably isn't an interesting story here, but I thought I'd parse anyway. 
 
 ### 5. Create Features to Describe Patterns
 
-This is underway! I've designed the algorithm (not written here yet) and will get it implemented soon.
-Below are just some notes from the weekend that might not be relevant.
+##### Idea 1: Corpora of Application File Access as an LLM
+
+> Predict what comes next and use for cache pre-loading and scheduling
+
+I was thinking about this more, and I'm not sure we need to describe explicit patterns in analyses. What we really need to do is be able to predict what files will be needed based on what is being used now. That algorithm is what would go into either a snapshotter (to do catche pre-fetching) or a scheduler (to be able to reserve resources before they are needed). Omg. This is exactly like an LLM, but with groups of paths for tokens instead of words. This means we need to train an LLM with a huge corpus of these extractions. And we probably need to account for similarity between paths with some kind of weight. For example, rockylinux installs to /usr/lib64/library.so and others to /lusr/lib/library.so, and those aren't exactly the same "token" but they are almost the same. In LAMMPS, the name of the reax input location and file were changed slightly. They produce different tokens but are running the "same" thing. So we need a weight in there that reflects that.
+
+##### Idea 2: Application File Access Compression
+
+A goal of finding patterns (to predict) would be to efficiently store a potentially hugely long application run logic. And arguably Idea 1 that can predict on the fly would warrant this not needed. But another idea is just to use compression. In the same way we can compress file contents (and it is based on finding common patterns, often) we can do this with file access.
 
 - Do a compression (or summary of sequences) to get patterns (e.g., AAA, AAB)
 - Make a histogram, so find frequency of each pattern
 - Once we have histogram, canonicalize the sequences - within a pattern, rename the letters or pattern so always ordered in some way. (e.g., ABC would be the same as CDF because they both are "three different things coming after one another"
-
