@@ -54,7 +54,7 @@ python plot-recording.py $(find ../recording -name *.out)
 In the above, we create a heatmap where access is relative to the whole set (darker is accessed the most).
 This means in the plot below, darker regions are accessed more. If colors are the same, the paths we acceessed the same number of times. It's fairly simple like that.
 
-![img/LAMMPS-top-recorded-paths.png](img/LAMMPS-top-recorded-paths.png )
+![img/LAMMPS-recorded-paths.png](img/LAMMPS-recorded-paths.png )
 
 ### 3. Trie to Describe patterns
 
