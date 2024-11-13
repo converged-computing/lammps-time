@@ -5,6 +5,7 @@ import sys
 
 import matplotlib.pylab as plt
 import networkx as nx
+import numpy
 import pandas
 import seaborn as sns
 from matplotlib.colors import TwoSlopeNorm
@@ -56,9 +57,7 @@ class Filesystem:
         self.min_count = 0
         self.max_count = 0
 
-    def get_graph(
-        self, node_color="skyblue", font_size=10, tree=True, node_size=1500, title=None
-    ):
+    def get_graph(self, font_size=10, tree=True, node_size=1000, title=None):
         """
         Get a plot for a trie
         """
@@ -66,15 +65,19 @@ class Filesystem:
         graph = nx.DiGraph()
 
         # Recursive function to walk through root, etc.
-        # We also return
         color_counts = {}
         get_counts(counts=color_counts, node=self.root)
         add_to_graph(graph=graph, root=self.root, node=self.root)
 
-        # Color based on count
-        colors = derive_node_colors(
-            min_count=self.min_count, max_count=self.max_count + 1
-        )
+        # Set a filter for the highest color so it doesn't bias the entire plot
+        unique_counts = list(set(list(color_counts.values())))
+        unique_counts.sort()
+        without_outliers = reject_outliers(unique_counts)
+
+        # Color based on count (outliers removed)!
+        min_count = without_outliers[0]
+        max_count = without_outliers[-1]
+        colors = derive_node_colors(min_count=min_count, max_count=max_count + 1)
 
         # We only want to get colors that match the count, so the scale is relevant
         node_colors = []
@@ -87,15 +90,30 @@ class Filesystem:
                 new_labels[node] = node
             else:
                 count = color_counts[node]
-                new_labels[node] = f"{node}\n{count}"
+                # Don't put label if count is 0!
+                if count == 0:
+                    new_labels[node] = node
+                else:
+                    new_labels[node] = f"{node}\n{count}"
+
+            # This adjusts the color scale within the range
+            # that does not have outliers
+            if count < min_count:
+                count = min_count
+            if count > max_count:
+                count = max_count
             node_colors.append(colors[count])
 
         # Tree visualization (much better) requires graphviz, dot, etc.
         if tree:
-            try:
-                pos = nx.nx_agraph.graphviz_layout(graph, prog="dot")
-            except:
-                sys.exit("conda install --channel conda-forge pygraphviz")
+            for i, layer in enumerate(nx.topological_generations(graph)):
+                for n in layer:
+                    graph.nodes[n]["layer"] = i
+            pos = nx.multipartite_layout(graph, subset_key="layer", align="horizontal")
+
+            # Flip the layout so the root node is on top
+            for k in pos:
+                pos[k][-1] *= -1
         else:
             pos = nx.spring_layout(graph)
 
@@ -106,6 +124,7 @@ class Filesystem:
             graph,
             pos,
             with_labels=False,
+            alpha=0.5,
             node_size=node_size,
             node_color=node_colors,
             font_size=font_size,
@@ -117,16 +136,22 @@ class Filesystem:
         plt.tight_layout()
         return graph
 
-    def insert(self, path, count=0):
+    def insert(self, path, count=0, remove_so_version=True):
         """
         Insert an INode into the filesystem.
 
-        If we are adding a count, increment by it.
+        If we are adding a count, increment by it. We also build the tree
+        without .so.<version> to compare across.
         """
+        if remove_so_version and ".so." in path:
+            path = path.split(".so.")[0] + ".so"
         node = self.root
+        partial_path = []
         for part in path.split(os.sep):
+            partial_path.append(part)
             if part not in node.children:
-                node.children[part] = INode(path)
+                assembled_path = os.sep.join(partial_path)
+                node.children[part] = INode(assembled_path)
             node = node.children[part]
         node.increment(count)
 
@@ -146,6 +171,17 @@ class Filesystem:
                 return
             node = node.children[part]
         return node
+
+
+def reject_outliers(data, m=2.0):
+    """
+    Reject outliers to derive the color scale.
+    """
+    # Median isn't influenced by outliers
+    d = numpy.abs(data - numpy.median(data))
+    mdev = numpy.median(d)
+    s = d / mdev if mdev else numpy.zeros(len(d))
+    return numpy.array(data)[s < m]
 
 
 class Traces:
@@ -296,11 +332,11 @@ def add_to_graph(graph, root, node, parent=None):
         add_to_graph(graph=graph, root=root, node=child, parent=node)
 
 
-def derive_node_colors(min_count, max_count, start=0, end=150):
+def derive_node_colors(min_count, max_count):
     """
     Given the min, max, and a center, return a range of colors
     """
-    palette = sns.diverging_palette(start, end, n=256, as_cmap=True)
+    palette = plt.cm.get_cmap("viridis")
     center = int(abs(max_count - min_count) / 2)
     norm = TwoSlopeNorm(vmin=min_count, vcenter=center, vmax=max_count)
     return [palette(norm(c)) for c in range(min_count, max_count)]

@@ -159,7 +159,9 @@ def plot_results(df, outdir):
         data=metric_df,
         palette=palette,
     )
-    title = f"LAMMPS Metric {metric} ({problem_size}) Releases Over {number_years} Years"
+    title = (
+        f"LAMMPS Metric {metric} ({problem_size}) Releases Over {number_years} Years"
+    )
     plt.title(title)
     ax.set_xlabel("Release Tag", fontsize=12)
     ax.set_ylabel(metric.split("_"), fontsize=12)

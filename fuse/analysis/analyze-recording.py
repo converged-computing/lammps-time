@@ -45,7 +45,7 @@ def main():
     sims.index = [x.replace(".out", "").replace("lammps-", "") for x in sims.index]
     sims.columns = [x.replace(".out", "").replace("lammps-", "") for x in sims.columns]
     plt.figure(figsize=(20, 20))
-    sns.clustermap(sims.astype(float), mask=(sims == 0.0), cmap="crest")
+    sns.clustermap(sims.astype(float), mask=(sims == 0.0), cmap="tab20b")
 
     # Save all the things!
     plot_path = os.path.join(args.outdir, f"{args.name}-levenstein-distance-matrix.png")
