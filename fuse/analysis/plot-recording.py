@@ -49,7 +49,7 @@ def main():
     counts = simcalc.all_counts()
     if args.n is not None and len(counts) < args.n:
         args.n = len(counts) - 1
-        shared_paths = list(counts)[: args.n]
+        shared_paths = list(counts)[:args.n]
     else:
         shared_paths = list(counts)
 
@@ -67,14 +67,12 @@ def main():
 
     plt.figure(figsize=(20, 20))
     df.index = [os.path.basename(x) for x in df.index]
-    sns.clustermap(df, mask=(df == 0.0), cmap="viridis")
+    sns.clustermap(df, mask=(df == 0.0), cmap="tab20b")
 
     if args.n is not None:
         save_path = f"{args.name}-top-{args.n}-recorded-paths.png"
         title = f"{args.name} Top (N={args.n}) Recorded Paths"
-        trie_title = (
-            f"Filesystem Recording Trie for {args.name} Top {args.n} Recorded Paths"
-        )
+        trie_title = f"Filesystem Recording Trie for {args.name} Top {args.n} Recorded Paths"
         trie_save = f"{args.name}-top-{args.n}-recorded-paths-trie.png"
     else:
         save_path = f"{args.name}-recorded-paths.png"
