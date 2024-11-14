@@ -90,3 +90,22 @@ A goal of finding patterns (to predict) would be to efficiently store a potentia
 - Do a compression (or summary of sequences) to get patterns (e.g., AAA, AAB)
 - Make a histogram, so find frequency of each pattern
 - Once we have histogram, canonicalize the sequences - within a pattern, rename the letters or pattern so always ordered in some way. (e.g., ABC would be the same as CDF because they both are "three different things coming after one another"
+
+Let's start with some basic models. It might not be possible to get enough data for a LLM.
+
+```bash
+python run-models.py $(find ../recording -name *.out)
+```
+```console
+Markov Model Results
+  Leave one out correct: 6860
+    Leave one out wrong: 1612
+          correct/total: 0.8097261567516525
+
+Frequency Results
+  Leave one out correct: 874
+    Leave one out wrong: 7598
+          correct/total: 0.10316336166194523
+```
+
+The first model (Markov) predicts the next token (path) based on the previous path (and this is calculated as a probability generated from the data). This means we have a transition probability matrix that is paths x paths, and each row sums to 1. The second model (frequency) is just using one vector of probabilities that also sums to one, but is generated just by counting the occurrence of each path across the entire dataset. For each, we do leave one out cross validation.  I would bet the errors have more to do with data (or changed) overall paths.

@@ -143,8 +143,8 @@ class Filesystem:
         If we are adding a count, increment by it. We also build the tree
         without .so.<version> to compare across.
         """
-        if remove_so_version and ".so." in path:
-            path = path.split(".so.")[0] + ".so"
+        if remove_so_version:
+            path = normalize_path(path)
         node = self.root
         partial_path = []
         for part in path.split(os.sep):
@@ -182,6 +182,14 @@ def reject_outliers(data, m=2.0):
     mdev = numpy.median(d)
     s = d / mdev if mdev else numpy.zeros(len(d))
     return numpy.array(data)[s < m]
+
+def normalize_path(path):
+        """
+        Normalize the path, meaning removing so library versions.
+        """
+        if ".so." in path:
+            return path.split(".so.")[0] + ".so"
+        return path
 
 
 class Traces:
@@ -231,19 +239,21 @@ class Traces:
                     function=parts[-2],
                     path=parts[-1],
                     timestamp=int(parts[-3]),
+                    normalized_path=normalize_path(parts[-1]),
                 )
 
     def to_dataframe(self, operation="Open"):
         """
         Create a data frame of lookup values, we can save for later and derive paths from it
         """
-        df = pandas.DataFrame(columns=["filename", "function", "path", "timestamp"])
+        df = pandas.DataFrame(columns=["filename", "function", "path", "normalized_path", "timestamp"])
         idx = 0
         for event in self.iter_events(operation=operation):
             df.loc[idx, :] = [
                 event.filename,
                 event.function,
                 event.path,
+                normalize_path(event.path),
                 event.timestamp,
             ]
             idx += 1
@@ -266,7 +276,7 @@ class Traces:
                 df.loc[filename2, filename1] = float(distance)
         return df
 
-    def as_paths(self, fullpath=False, operation="Open"):
+    def as_paths(self, fullpath=False, operation="Open", remove_so_version=True):
         """
         Return lists of paths (lookup) corresponding to traces.
         """
@@ -277,10 +287,13 @@ class Traces:
                 key = event.filename
             if key not in lookup:
                 lookup[key] = []
-            lookup[key].append(event.path)
+            if remove_so_version:
+                lookup[key].append(event.normalized_path)
+            else:
+                lookup[key].append(event.path)
         return lookup
 
-    def all_counts(self, operation="Open"):
+    def all_counts(self, operation="Open", remove_so_version=True):
         """
         Return lookup of all counts corresponding to traces.
 
@@ -289,12 +302,15 @@ class Traces:
         """
         lookup = {}
         for event in self.iter_events(operation=operation):
-            if event.path not in lookup:
-                lookup[event.path] = 0
-            lookup[event.path] += 1
+            path = event.path
+            if remove_so_version:
+                path = event.normalized_path
+            if path not in lookup:
+                lookup[path] = 0
+            lookup[path] += 1
         return dict(sorted(lookup.items(), key=lambda item: item[1], reverse=True))
 
-    def as_counts(self, fullpath=False, operation="Open"):
+    def as_counts(self, fullpath=False, operation="Open", remove_so_version=True):
         """
         Return lookup of counts corresponding to traces.
         """
@@ -305,9 +321,12 @@ class Traces:
                 key = event.filename
             if event.filename not in lookup:
                 lookup[key] = {}
-            if event.path not in lookup[key]:
-                lookup[key][event.path] = 0
-            lookup[key][event.path] += 1
+            path = event.path
+            if remove_so_version:
+                path = event.normalized_path
+            if path not in lookup[key]:
+                lookup[key][path] = 0
+            lookup[key][path] += 1
         return lookup
 
 
