@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 
 import os
-import sys
 
 import matplotlib.pylab as plt
 import networkx as nx
 import numpy
 import pandas
-import seaborn as sns
 from matplotlib.colors import TwoSlopeNorm
 
 
@@ -183,13 +181,14 @@ def reject_outliers(data, m=2.0):
     s = d / mdev if mdev else numpy.zeros(len(d))
     return numpy.array(data)[s < m]
 
+
 def normalize_path(path):
-        """
-        Normalize the path, meaning removing so library versions.
-        """
-        if ".so." in path:
-            return path.split(".so.")[0] + ".so"
-        return path
+    """
+    Normalize the path, meaning removing so library versions.
+    """
+    if ".so." in path:
+        return path.split(".so.")[0] + ".so"
+    return path
 
 
 class Traces:
@@ -244,18 +243,48 @@ class Traces:
 
     def to_dataframe(self, operation="Open"):
         """
-        Create a data frame of lookup values, we can save for later and derive paths from it
+        Create a data frame of lookup values, we can save for later and derive paths from it.
+
+        Normalized path removes the so version, if we find it. ms_in_state is milliseconds in state
+        and is the time from the current event to the next, which is the time spent in that event.
         """
-        df = pandas.DataFrame(columns=["filename", "function", "path", "normalized_path", "timestamp"])
+        df = pandas.DataFrame(
+            columns=[
+                "filename",
+                "basename",
+                "function",
+                "path",
+                "normalized_path",
+                # This is a normalized path
+                "previous_path",
+                "timestamp",
+                "ms_in_state",
+            ]
+        )
         idx = 0
+        previous_timestamp = None
+        previous_path = None
+        current = None
         for event in self.iter_events(operation=operation):
+            normalized_path = normalize_path(event.path)
             df.loc[idx, :] = [
                 event.filename,
+                os.path.basename(event.filename),
                 event.function,
                 event.path,
-                normalize_path(event.path),
+                normalized_path,
+                previous_path,
                 event.timestamp,
+                None,
             ]
+            if current is not None and event.filename != current:
+                previous_path = None
+                previous_timestamp = None
+            if previous_timestamp is not None:
+                df.loc[idx - 1, "ms_in_state"] = event.timestamp - previous_timestamp
+            previous_timestamp = event.timestamp
+            previous_path = normalized_path
+            current = event.filename
             idx += 1
         return df
 
@@ -275,6 +304,22 @@ class Traces:
                 df.loc[filename1, filename2] = float(distance)
                 df.loc[filename2, filename1] = float(distance)
         return df
+
+    @property
+    def samples(self):
+        return list(self.as_paths().values())
+
+    def iter_loo(self):
+        """
+        Yield train and test data for leave 1 out samples.
+        Return the name of the test sample to identify it.
+        I mostly just wanted to call this function "iter_loo" :)
+        """
+        paths = self.as_paths()
+        for left_out in paths:
+            train = [v for k, v in paths.items() if k != left_out]
+            test = paths[left_out]
+            yield train, test, left_out
 
     def as_paths(self, fullpath=False, operation="Open", remove_so_version=True):
         """

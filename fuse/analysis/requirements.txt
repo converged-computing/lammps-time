@@ -6,3 +6,4 @@ pygraphviz
 scipy
 metricsoperator
 numpy
+cthmm

@@ -77,13 +77,13 @@ There probably isn't an interesting story here, but I thought I'd parse anyway. 
 
 ### 5. Create Features to Describe Patterns
 
-##### Idea 1: Corpora of Application File Access as an LLM
+#### Idea 1: Corpora of Application File Access as an LLM
 
 > Predict what comes next and use for cache pre-loading and scheduling
 
 I was thinking about this more, and I'm not sure we need to describe explicit patterns in analyses. What we really need to do is be able to predict what files will be needed based on what is being used now. That algorithm is what would go into either a snapshotter (to do catche pre-fetching) or a scheduler (to be able to reserve resources before they are needed). Omg. This is exactly like an LLM, but with groups of paths for tokens instead of words. This means we need to train an LLM with a huge corpus of these extractions. And we probably need to account for similarity between paths with some kind of weight. For example, rockylinux installs to /usr/lib64/library.so and others to /lusr/lib/library.so, and those aren't exactly the same "token" but they are almost the same. In LAMMPS, the name of the reax input location and file were changed slightly. They produce different tokens but are running the "same" thing. So we need a weight in there that reflects that.
 
-##### Idea 2: Application File Access Compression
+#### Idea 2: Application File Access Compression
 
 A goal of finding patterns (to predict) would be to efficiently store a potentially hugely long application run logic. And arguably Idea 1 that can predict on the fly would warrant this not needed. But another idea is just to use compression. In the same way we can compress file contents (and it is based on finding common patterns, often) we can do this with file access.
 
@@ -91,7 +91,11 @@ A goal of finding patterns (to predict) would be to efficiently store a potentia
 - Make a histogram, so find frequency of each pattern
 - Once we have histogram, canonicalize the sequences - within a pattern, rename the letters or pattern so always ordered in some way. (e.g., ABC would be the same as CDF because they both are "three different things coming after one another"
 
+### Models
+
 Let's start with some basic models. It might not be possible to get enough data for a LLM.
+
+#### Hidden Markov Model (one-gram)
 
 ```bash
 python run-models.py $(find ../recording -name *.out)
@@ -109,3 +113,16 @@ Frequency Results
 ```
 
 The first model (Markov) predicts the next token (path) based on the previous path (and this is calculated as a probability generated from the data). This means we have a transition probability matrix that is paths x paths, and each row sums to 1. The second model (frequency) is just using one vector of probabilities that also sums to one, but is generated just by counting the occurrence of each path across the entire dataset. For each, we do leave one out cross validation.  I would bet the errors have more to do with data (or changed) overall paths.
+
+#### Hidden Markov Model with Timestamps
+
+> A markov model that also accounts for the timestamps, with conditional transition times.    
+
+I wanted to tweak the above to account for the transitions times. So I created a second matrix, where each cell (a transition from state/path A in the row to state/path B in the column) would have the mean time across all datasets that is actually captured for that state. I then:
+
+1. Start with the same transition probability from A->B
+2. Generate a transition time matrix as the mean value across datasets for that exact change of state
+3. Generate a Poisson sample from a distribution with that mean (visually they look Poisson)
+4. Calculate a residual of the abs(actual - predicted) / actual
+
+The last step is an attempt to quasi normalize - the error as a percentage of the actual. I then plot the residuals based on the state change, assuming that the model can perform differently for different ones. The plots are in the pdf [residuals-for-paths-normalized.pdf](img/residuals-for-paths-normalized.pdf). I don't include the state changes from A to A (a path to itself) because it's not technically a change of state, and the recording seems arbitrary (we could, for example, combine the chain into one state but then the length of that is also arbitrary). Some of these are OK, but some are mediocre (hwloc) and some are very bad (the data file). It's a start.
