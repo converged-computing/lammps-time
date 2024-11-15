@@ -114,6 +114,8 @@ Frequency Results
 
 The first model (Markov) predicts the next token (path) based on the previous path (and this is calculated as a probability generated from the data). This means we have a transition probability matrix that is paths x paths, and each row sums to 1. The second model (frequency) is just using one vector of probabilities that also sums to one, but is generated just by counting the occurrence of each path across the entire dataset. For each, we do leave one out cross validation.  I would bet the errors have more to do with data (or changed) overall paths.
 
+To validate, I wanted to compare to some base state. I don't know if there is a name for this, but I decided that for a "base case" to test the Markov Model against, I could use the frequencies (the second print) across all datasets. This means all paths for some path A instead of one scoped to the previous path.  I guess it's like a 0 gram? It performs much worse (second block above) so if it's a sound case, it tells us that the simple approach of using the Markov Model is pretty good. Of course we'd want to test this on larger LAMMPS runs on more nodes.
+
 #### Hidden Markov Model with Timestamps
 
 > A markov model that also accounts for the timestamps, with conditional transition times.    
