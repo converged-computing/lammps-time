@@ -24,6 +24,7 @@ python run-experiment.py
 Then parse the single result files into output files for each.
 
 ```bash
+# gets data from data/raw and parses into results/recordings and results/output
 python parse-results.py
 ```
 
@@ -41,11 +42,17 @@ compatlib run-models -d ./results $(find ./results/recordings -name *.out)
 ```
 ```console
 Markov Model Results
-  Leave one out correct: 4999
-    Leave one out wrong: 1148
-          correct/total: 0.8132422319830812
+  Leave one out correct: 4950
+    Leave one out wrong: 1197
+          correct/total: 0.8052708638360175
 Frequency Results
-  Leave one out correct: 617
-    Leave one out wrong: 5533
-          correct/total: 0.10032520325203252
+  Leave one out correct: 612
+    Leave one out wrong: 5538
+          correct/total: 0.09951219512195122
+```
+
+Finally, generate a perfetto trace file to visualize events with times:
+
+```bash
+compatlib to-perfetto -d ./results $(find ./results/recordings -name *.out)
 ```

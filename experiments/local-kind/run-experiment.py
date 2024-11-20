@@ -300,7 +300,7 @@ def get_parser():
     parser.add_argument(
         "--data-dir",
         help="path to save data",
-        default=os.path.join(here, "data"),
+        default=os.path.join(here, "data", "raw"),
     )
     parser.add_argument(
         "--x",

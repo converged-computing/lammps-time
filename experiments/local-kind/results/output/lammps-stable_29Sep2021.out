@@ -1,7 +1,7 @@
 ⭐️ Filesystem Recorder (fs-record)
-Mount directory /tmp/compatlib3840284008
+Mount directory /tmp/compatlib3129882754
 Mounted!
-proot -S /tmp/compatlib3840284008 -0 lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxc.hns -nocite
+proot -S /tmp/compatlib3129882754 -0 lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxc.hns -nocite
 WARNING on proc 0: Cannot open log.lammps for writing: Read-only file system (src/lammps.cpp:476)
 LAMMPS (29 Sep 2021)
 OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
@@ -21,7 +21,7 @@ Replicating atoms ...
   bounding box extra memory = 0.03 MB
   average # of replicas added to proc = 64.00 out of 64 (100.00%)
   19456 atoms
-  replicate CPU = 0.002 seconds
+  replicate CPU = 0.003 seconds
 Neighbor list info ...
   update every 20 steps, delay 0 steps, check no
   max neighbors/atom: 2000, page size: 100000
@@ -56,20 +56,20 @@ Step Temp PotEng Press E_vdwl E_coul Volume
       80    296.72365   -113.26783    6678.2101   -111.56871    -1.699117    219350.94 
       90    301.41819   -113.28184    8078.0706   -111.58311   -1.6987273    219350.94 
      100    303.68663   -113.28857    10072.347   -111.59016   -1.6984125    219350.94 
-Loop time of 99.2661 on 1 procs for 100 steps with 19456 atoms
+Loop time of 106.809 on 1 procs for 100 steps with 19456 atoms
 
-Performance: 0.009 ns/day, 2757.390 hours/ns, 1.007 timesteps/s
-100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
+Performance: 0.008 ns/day, 2966.927 hours/ns, 0.936 timesteps/s
+99.9% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 67.636     | 67.636     | 67.636     |   0.0 | 68.14
-Neigh   | 0.92415    | 0.92415    | 0.92415    |   0.0 |  0.93
-Comm    | 0.015615   | 0.015615   | 0.015615   |   0.0 |  0.02
-Output  | 0.0016399  | 0.0016399  | 0.0016399  |   0.0 |  0.00
-Modify  | 30.687     | 30.687     | 30.687     |   0.0 | 30.91
-Other   |            | 0.002006   |            |       |  0.00
+Pair    | 72.897     | 72.897     | 72.897     |   0.0 | 68.25
+Neigh   | 0.98846    | 0.98846    | 0.98846    |   0.0 |  0.93
+Comm    | 0.017609   | 0.017609   | 0.017609   |   0.0 |  0.02
+Output  | 0.0016701  | 0.0016701  | 0.0016701  |   0.0 |  0.00
+Modify  | 32.903     | 32.903     | 32.903     |   0.0 | 30.80
+Other   |            | 0.002004   |            |       |  0.00
 
 Nlocal:        19456.0 ave       19456 max       19456 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -82,7 +82,7 @@ Total # of neighbors = 5746895
 Ave neighs/atom = 295.37906
 Neighbor list builds = 5
 Dangerous builds not checked
-Total wall time: 0:01:41
+Total wall time: 0:01:49
 Command is done running
-Cleaning up /tmp/compatlib3840284008...
+Cleaning up /tmp/compatlib3129882754...
 Output file written to /tmp/out/lammps-recording.out
