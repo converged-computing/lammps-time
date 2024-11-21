@@ -42,13 +42,13 @@ compatlib run-models -d ./results $(find ./results/recordings -name *.out)
 ```
 ```console
 Markov Model Results
-  Leave one out correct: 4950
-    Leave one out wrong: 1197
-          correct/total: 0.8052708638360175
+  Leave one out correct: 4928
+    Leave one out wrong: 1219
+          correct/total: 0.8016918822189686
 Frequency Results
-  Leave one out correct: 612
-    Leave one out wrong: 5538
-          correct/total: 0.09951219512195122
+  Leave one out correct: 645
+    Leave one out wrong: 5505
+          correct/total: 0.1048780487804878
 ```
 
 Finally, generate a perfetto trace file to visualize events with times:
@@ -56,3 +56,7 @@ Finally, generate a perfetto trace file to visualize events with times:
 ```bash
 compatlib to-perfetto -d ./results $(find ./results/recordings -name *.out)
 ```
+
+What I see in the above is mostly that the data files take up most of the open time, and the library reads are tiny.
+That said, their presence is still important. I think this approach would do better with something that is reading data,
+although I'm not sure I have a good solution with fuse-go that isn't able to keep track of a unique identifier.
