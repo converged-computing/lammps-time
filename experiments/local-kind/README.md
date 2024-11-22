@@ -60,3 +60,14 @@ compatlib to-perfetto -d ./results $(find ./results/recordings -name *.out)
 What I see in the above is mostly that the data files take up most of the open time, and the library reads are tiny.
 That said, their presence is still important. I think this approach would do better with something that is reading data,
 although I'm not sure I have a good solution with fuse-go that isn't able to keep track of a unique identifier.
+
+## Analysis
+
+Here are the corresponding results images to [these](https://github.com/converged-computing/lammps-time/tree/main/fuse/analysis)
+
+![results/img/LAMMPS-levenstein-distance-matrix.png](results/img/LAMMPS-levenstein-distance-matrix.png)
+![results/img/LAMMPS-recorded-paths.png](results/img/LAMMPS-recorded-paths.png)
+![results/img/LAMMPS-top-recorded-paths-trie.png](results/img/LAMMPS-top-recorded-paths-trie.png)
+
+The biggest difference is likely seeing paths related to Flux or communication (e.g., MPI). A question I have is if there is something of interest related to doing a diff. For example, how does a LAMMPS run differ under different running conditions (and do we care / is that important in some context)?
+
