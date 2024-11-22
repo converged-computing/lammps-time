@@ -1,213 +1,279 @@
-2024/11/17 07:06:08 logger.go:55: 1731827168882413683 Lookup     /etc
-2024/11/17 07:06:08 logger.go:55: 1731827168882514965 Lookup     /etc/host.conf
-2024/11/17 07:06:08 logger.go:55: 1731827168882546826 Lookup     /etc/hosts
-2024/11/17 07:06:08 logger.go:55: 1731827168882574158 Lookup     /etc/nsswitch.conf
-2024/11/17 07:06:08 logger.go:55: 1731827168882602612 Lookup     /etc/resolv.conf
-2024/11/17 07:06:08 logger.go:55: 1731827168882640383 Lookup     /dev
-2024/11/17 07:06:08 logger.go:55: 1731827168882660521 Lookup     /sys
-2024/11/17 07:06:08 logger.go:55: 1731827168882682664 Lookup     /proc
-2024/11/17 07:06:08 logger.go:55: 1731827168882702852 Lookup     /tmp
-2024/11/17 07:06:08 logger.go:55: 1731827168882723210 Lookup     /root
-2024/11/17 07:06:08 logger.go:55: 1731827168882768847 Lookup     /opt
-2024/11/17 07:06:08 logger.go:55: 1731827168882792993 Lookup     /opt/lammps
-2024/11/17 07:06:08 logger.go:55: 1731827168882815756 Lookup     /opt/lammps/examples
-2024/11/17 07:06:08 logger.go:55: 1731827168882844811 Lookup     /opt/lammps/examples/reax
-2024/11/17 07:06:08 logger.go:55: 1731827168882869668 Lookup     /opt/lammps/examples/reax/HNS
-2024/11/17 07:06:08 logger.go:55: 1731827168882989065 Lookup     /usr
-2024/11/17 07:06:08 logger.go:55: 1731827168883013481 Lookup     /usr/local
-2024/11/17 07:06:08 logger.go:55: 1731827168883034000 Lookup     /usr/local/sbin
-2024/11/17 07:06:08 logger.go:55: 1731827168883125133 Lookup     /usr/local/bin
-2024/11/17 07:06:08 logger.go:55: 1731827168883213541 Lookup     /usr/sbin
-2024/11/17 07:06:08 logger.go:55: 1731827168883302810 Lookup     /usr/bin
-2024/11/17 07:06:08 logger.go:55: 1731827168883332897 Lookup     /usr/bin/lmp
-2024/11/17 07:06:08 logger.go:55: 1731827168883585387 Open       /usr/bin/lmp
-2024/11/17 07:06:08 logger.go:55: 1731827168883678503 Open       /usr/bin/lmp
-2024/11/17 07:06:08 logger.go:55: 1731827168883728809 Lookup     /lib64
-2024/11/17 07:06:08 logger.go:55: 1731827168883767662 Lookup     /usr/lib64
-2024/11/17 07:06:08 logger.go:55: 1731827168883830652 Lookup     /usr/lib64/ld-linux-x86-64.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168883892610 Lookup     /lib
-2024/11/17 07:06:08 logger.go:55: 1731827168883923849 Lookup     /usr/lib
-2024/11/17 07:06:08 logger.go:55: 1731827168883992649 Lookup     /usr/lib/x86_64-linux-gnu
-2024/11/17 07:06:08 logger.go:55: 1731827168884016515 Lookup     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168884086367 Open       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168884655427 Open       /usr/bin/lmp
-2024/11/17 07:06:08 logger.go:55: 1731827168885109278 Open       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168885840536 Lookup     /opt/software
-2024/11/17 07:06:08 logger.go:55: 1731827168885871014 Lookup     /opt/software/linux-rocky9-x86_64
-2024/11/17 07:06:08 logger.go:55: 1731827168885894939 Lookup     /opt/software/linux-rocky9-x86_64/gcc-11.4.1
-2024/11/17 07:06:08 logger.go:55: 1731827168885919085 Lookup     /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y
-2024/11/17 07:06:08 logger.go:55: 1731827168885948681 Lookup     /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y/lib
-2024/11/17 07:06:08 logger.go:55: 1731827168885971795 Lookup     /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y/lib/flux
-2024/11/17 07:06:08 logger.go:55: 1731827168888039719 Lookup     /etc/ld.so.cache
-2024/11/17 07:06:08 logger.go:55: 1731827168888074665 Open       /etc/ld.so.cache
-2024/11/17 07:06:08 logger.go:55: 1731827168888291747 Lookup     /usr/lib/x86_64-linux-gnu/libmpich.so.12
-2024/11/17 07:06:08 logger.go:55: 1731827168888332975 Lookup     /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0
-2024/11/17 07:06:08 logger.go:55: 1731827168888402888 Open       /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0
-2024/11/17 07:06:08 logger.go:55: 1731827168888964313 Lookup     /usr/lib/x86_64-linux-gnu/libstdc++.so.6
-2024/11/17 07:06:08 logger.go:55: 1731827168889005101 Lookup     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
-2024/11/17 07:06:08 logger.go:55: 1731827168889074292 Open       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
-2024/11/17 07:06:08 logger.go:55: 1731827168889655826 Lookup     /usr/lib/x86_64-linux-gnu/libm.so.6
-2024/11/17 07:06:08 logger.go:55: 1731827168889690922 Open       /usr/lib/x86_64-linux-gnu/libm.so.6
-2024/11/17 07:06:08 logger.go:55: 1731827168890189769 Lookup     /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168890230666 Open       /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168890685029 Lookup     /usr/lib/x86_64-linux-gnu/libc.so.6
-2024/11/17 07:06:08 logger.go:55: 1731827168890718011 Open       /usr/lib/x86_64-linux-gnu/libc.so.6
-2024/11/17 07:06:08 logger.go:55: 1731827168891382803 Lookup     /usr/lib/x86_64-linux-gnu/libhwloc.so.15
-2024/11/17 07:06:08 logger.go:55: 1731827168891434250 Lookup     /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2
-2024/11/17 07:06:08 logger.go:55: 1731827168891499143 Open       /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2
-2024/11/17 07:06:08 logger.go:55: 1731827168892058525 Lookup     /usr/lib/x86_64-linux-gnu/libfabric.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168892097399 Lookup     /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0
-2024/11/17 07:06:08 logger.go:55: 1731827168892226043 Open       /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0
-2024/11/17 07:06:08 logger.go:55: 1731827168892744527 Lookup     /usr/lib/x86_64-linux-gnu/libudev.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168892779413 Lookup     /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
-2024/11/17 07:06:08 logger.go:55: 1731827168892851379 Open       /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
-2024/11/17 07:06:08 logger.go:55: 1731827168893349845 Lookup     /usr/lib/x86_64-linux-gnu/librdmacm.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168893391564 Lookup     /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168893459824 Open       /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168893969732 Lookup     /usr/lib/x86_64-linux-gnu/libefa.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168894018604 Lookup     /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168894094979 Open       /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168894572034 Lookup     /usr/lib/x86_64-linux-gnu/libibverbs.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168894614405 Lookup     /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168894678186 Open       /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0
-2024/11/17 07:06:08 logger.go:55: 1731827168895160160 Lookup     /usr/lib/x86_64-linux-gnu/libpsm_infinipath.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168895258146 Lookup     /etc/alternatives
-2024/11/17 07:06:08 logger.go:55: 1731827168895280248 Lookup     /etc/alternatives/libpsm_infinipath.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168895345652 Lookup     /usr/lib/libpsm1
-2024/11/17 07:06:08 logger.go:55: 1731827168895367734 Lookup     /usr/lib/libpsm1/libpsm_infinipath.so.1.16
-2024/11/17 07:06:08 logger.go:55: 1731827168895404514 Open       /usr/lib/libpsm1/libpsm_infinipath.so.1.16
-2024/11/17 07:06:08 logger.go:55: 1731827168895968815 Lookup     /usr/lib/x86_64-linux-gnu/libpsm2.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168896012939 Lookup     /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2
-2024/11/17 07:06:08 logger.go:55: 1731827168896074395 Open       /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2
-2024/11/17 07:06:08 logger.go:55: 1731827168896592017 Lookup     /usr/lib/x86_64-linux-gnu/libnl-3.so.200
-2024/11/17 07:06:08 logger.go:55: 1731827168896631873 Lookup     /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0
-2024/11/17 07:06:08 logger.go:55: 1731827168896692338 Open       /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0
-2024/11/17 07:06:08 logger.go:55: 1731827168897212324 Lookup     /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200
-2024/11/17 07:06:08 logger.go:55: 1731827168897258572 Lookup     /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0
-2024/11/17 07:06:08 logger.go:55: 1731827168897320951 Open       /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0
-2024/11/17 07:06:08 logger.go:55: 1731827168897880102 Lookup     /usr/lib/x86_64-linux-gnu/libinfinipath.so.4
-2024/11/17 07:06:08 logger.go:55: 1731827168897917483 Lookup     /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0
-2024/11/17 07:06:08 logger.go:55: 1731827168897979621 Open       /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0
-2024/11/17 07:06:08 logger.go:55: 1731827168898455293 Lookup     /usr/lib/x86_64-linux-gnu/librt.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168898489678 Open       /usr/lib/x86_64-linux-gnu/librt.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168899094376 Lookup     /usr/lib/x86_64-linux-gnu/libpthread.so.0
-2024/11/17 07:06:08 logger.go:55: 1731827168899189346 Open       /usr/lib/x86_64-linux-gnu/libpthread.so.0
-2024/11/17 07:06:08 logger.go:55: 1731827168899753456 Lookup     /usr/lib/x86_64-linux-gnu/libdl.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168899790777 Open       /usr/lib/x86_64-linux-gnu/libdl.so.2
-2024/11/17 07:06:08 logger.go:55: 1731827168900292890 Lookup     /usr/lib/x86_64-linux-gnu/libuuid.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168900327375 Lookup     /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
-2024/11/17 07:06:08 logger.go:55: 1731827168900386327 Open       /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
-2024/11/17 07:06:08 logger.go:55: 1731827168900809050 Lookup     /usr/lib/x86_64-linux-gnu/libnuma.so.1
-2024/11/17 07:06:08 logger.go:55: 1731827168900851550 Lookup     /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0
-2024/11/17 07:06:08 logger.go:55: 1731827168900911304 Open       /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169112086091 Lookup     /usr/lib/x86_64-linux-gnu/hwloc
-2024/11/17 07:06:09 logger.go:55: 1731827169112403003 Lookup     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so
-2024/11/17 07:06:09 logger.go:55: 1731827169112427499 Lookup     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so
-2024/11/17 07:06:09 logger.go:55: 1731827169112445764 Lookup     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so
-2024/11/17 07:06:09 logger.go:55: 1731827169112463648 Lookup     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so
-2024/11/17 07:06:09 logger.go:55: 1731827169112665701 Open       /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so
-2024/11/17 07:06:09 logger.go:55: 1731827169113167443 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169113473714 Lookup     /usr/lib/x86_64-linux-gnu/libOpenCL.so.1
-2024/11/17 07:06:09 logger.go:55: 1731827169113556121 Lookup     /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169113662092 Open       /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169114304511 Open       /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so
-2024/11/17 07:06:09 logger.go:55: 1731827169114756939 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169114998438 Lookup     /usr/lib/x86_64-linux-gnu/libxml2.so.2
-2024/11/17 07:06:09 logger.go:55: 1731827169115045577 Lookup     /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13
-2024/11/17 07:06:09 logger.go:55: 1731827169115122363 Open       /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13
-2024/11/17 07:06:09 logger.go:55: 1731827169115788547 Lookup     /usr/lib/x86_64-linux-gnu/libicuuc.so.70
-2024/11/17 07:06:09 logger.go:55: 1731827169115831609 Lookup     /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1
-2024/11/17 07:06:09 logger.go:55: 1731827169115910208 Open       /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1
-2024/11/17 07:06:09 logger.go:55: 1731827169116565692 Lookup     /usr/lib/x86_64-linux-gnu/libz.so.1
-2024/11/17 07:06:09 logger.go:55: 1731827169116605227 Lookup     /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
-2024/11/17 07:06:09 logger.go:55: 1731827169116674989 Open       /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
-2024/11/17 07:06:09 logger.go:55: 1731827169117224973 Lookup     /usr/lib/x86_64-linux-gnu/liblzma.so.5
-2024/11/17 07:06:09 logger.go:55: 1731827169117267263 Lookup     /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
-2024/11/17 07:06:09 logger.go:55: 1731827169117334110 Open       /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
-2024/11/17 07:06:09 logger.go:55: 1731827169118268573 Lookup     /usr/lib/x86_64-linux-gnu/libicudata.so.70
-2024/11/17 07:06:09 logger.go:55: 1731827169118340710 Lookup     /usr/lib/x86_64-linux-gnu/libicudata.so.70.1
-2024/11/17 07:06:09 logger.go:55: 1731827169118414149 Open       /usr/lib/x86_64-linux-gnu/libicudata.so.70.1
-2024/11/17 07:06:09 logger.go:55: 1731827169119823804 Open       /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so
-2024/11/17 07:06:09 logger.go:55: 1731827169120265091 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169120515937 Lookup     /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0
-2024/11/17 07:06:09 logger.go:55: 1731827169120560372 Lookup     /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169120630334 Open       /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169121121847 Lookup     /usr/lib/x86_64-linux-gnu/libX11.so.6
-2024/11/17 07:06:09 logger.go:55: 1731827169121168486 Lookup     /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
-2024/11/17 07:06:09 logger.go:55: 1731827169121248037 Open       /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
-2024/11/17 07:06:09 logger.go:55: 1731827169121854137 Lookup     /usr/lib/x86_64-linux-gnu/libXext.so.6
-2024/11/17 07:06:09 logger.go:55: 1731827169121896988 Lookup     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
-2024/11/17 07:06:09 logger.go:55: 1731827169121970387 Open       /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
-2024/11/17 07:06:09 logger.go:55: 1731827169122493570 Lookup     /usr/lib/x86_64-linux-gnu/libxcb.so.1
-2024/11/17 07:06:09 logger.go:55: 1731827169122538766 Lookup     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
-2024/11/17 07:06:09 logger.go:55: 1731827169122609690 Open       /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
-2024/11/17 07:06:09 logger.go:55: 1731827169123189811 Lookup     /usr/lib/x86_64-linux-gnu/libXau.so.6
-2024/11/17 07:06:09 logger.go:55: 1731827169123236971 Lookup     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169123315630 Open       /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169123794619 Lookup     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6
-2024/11/17 07:06:09 logger.go:55: 1731827169123838652 Lookup     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169123915498 Open       /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
-2024/11/17 07:06:09 logger.go:55: 1731827169124423152 Lookup     /usr/lib/x86_64-linux-gnu/libbsd.so.0
-2024/11/17 07:06:09 logger.go:55: 1731827169124475842 Lookup     /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5
-2024/11/17 07:06:09 logger.go:55: 1731827169124549391 Open       /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5
-2024/11/17 07:06:09 logger.go:55: 1731827169125110025 Lookup     /usr/lib/x86_64-linux-gnu/libmd.so.0
-2024/11/17 07:06:09 logger.go:55: 1731827169125170700 Lookup     /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5
-2024/11/17 07:06:09 logger.go:55: 1731827169125261542 Open       /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5
-2024/11/17 07:06:09 logger.go:55: 1731827169126150800 Open       /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so
-2024/11/17 07:06:09 logger.go:55: 1731827169126604531 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169126833365 Lookup     /usr/lib/x86_64-linux-gnu/libpciaccess.so.0
-2024/11/17 07:06:09 logger.go:55: 1731827169126878661 Lookup     /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1
-2024/11/17 07:06:09 logger.go:55: 1731827169126967349 Open       /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1
-2024/11/17 07:06:09 logger.go:55: 1731827169407302853 Lookup     /run
-2024/11/17 07:06:09 logger.go:55: 1731827169412897590 Lookup     /var
-2024/11/17 07:06:09 logger.go:55: 1731827169412939519 Lookup     /var/run
-2024/11/17 07:06:09 logger.go:55: 1731827169413976888 Lookup     /etc/gai.conf
-2024/11/17 07:06:09 logger.go:55: 1731827169414015391 Open       /etc/gai.conf
-2024/11/17 07:06:09 logger.go:55: 1731827169422644605 Lookup     /usr/share
-2024/11/17 07:06:09 logger.go:55: 1731827169422699991 Lookup     /usr/share/misc
-2024/11/17 07:06:09 logger.go:55: 1731827169438985624 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169447805390 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169448615276 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169449401979 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169450172952 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169450957581 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169451737631 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169452509937 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169453289396 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169454069737 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169454859275 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169455662028 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169456455043 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169457241806 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169458016816 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169458797878 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169459571286 Open       /etc/ld.so.cache
-2024/11/17 07:06:09 logger.go:55: 1731827169470653545 Lookup     /opt/lammps/examples/reax/HNS/in.reaxc.hns
-2024/11/17 07:06:09 logger.go:55: 1731827169470715012 Open       /opt/lammps/examples/reax/HNS/in.reaxc.hns
-2024/11/17 07:06:09 logger.go:55: 1731827169472661556 Lookup     /opt/lammps/examples/reax/HNS/data.hns-equil
-2024/11/17 07:06:09 logger.go:55: 1731827169472731759 Open       /opt/lammps/examples/reax/HNS/data.hns-equil
-2024/11/17 07:06:09 logger.go:55: 1731827169483545659 Complete   /tmp/out/lammps-recording.out
-2024/11/17 07:06:09 logger.go:55: 1731827169483753413 Lookup     /sbin
-2024/11/17 07:06:09 logger.go:55: 1731827169483766548 Lookup     /root
-2024/11/17 07:06:09 logger.go:55: 1731827169483799370 Lookup     /srv
-2024/11/17 07:06:09 logger.go:55: 1731827169483824909 Lookup     /media
-2024/11/17 07:06:09 logger.go:55: 1731827169483841270 Lookup     /libx32
-2024/11/17 07:06:09 logger.go:55: 1731827169483848684 Lookup     /lib64
-2024/11/17 07:06:09 logger.go:55: 1731827169483853964 Lookup     /etc
-2024/11/17 07:06:09 logger.go:55: 1731827169483860807 Lookup     /proc
-2024/11/17 07:06:09 logger.go:55: 1731827169483867039 Lookup     /usr
-2024/11/17 07:06:09 logger.go:55: 1731827169483887708 Lookup     /lib32
-2024/11/17 07:06:09 logger.go:55: 1731827169483903979 Lookup     /boot
-2024/11/17 07:06:09 logger.go:55: 1731827169483908678 Lookup     /var
-2024/11/17 07:06:09 logger.go:55: 1731827169483913968 Lookup     /tmp
-2024/11/17 07:06:09 logger.go:55: 1731827169483918557 Lookup     /mnt
-2024/11/17 07:06:09 logger.go:55: 1731827169483924568 Lookup     /dev
-2024/11/17 07:06:09 logger.go:55: 1731827169483929457 Lookup     /opt
-2024/11/17 07:06:09 logger.go:55: 1731827169483947742 Lookup     /home
-2024/11/17 07:06:09 logger.go:55: 1731827169483954104 Lookup     /lib
-2024/11/17 07:06:09 logger.go:55: 1731827169483965435 Lookup     /sys
-2024/11/17 07:06:09 logger.go:55: 1731827169483974463 Lookup     /bin
-2024/11/17 07:06:09 logger.go:55: 1731827169483980193 Lookup     /run
-2024/11/17 07:06:09 logger.go:55: 1731827169483985554 Lookup     /flux_operator
-2024/11/17 07:06:09 logger.go:55: 1731827169483990874 Lookup     /product_name
-2024/11/17 07:06:09 logger.go:55: 1731827169484058682 Lookup     /product_uuid
+2024/11/21 22:17:54 logger.go:63: 1732227474069182594 Lookup    /etc      
+2024/11/21 22:17:54 logger.go:63: 1732227474069309827 Lookup    /etc/host.conf
+2024/11/21 22:17:54 logger.go:63: 1732227474069355053 Lookup    /etc/hosts
+2024/11/21 22:17:54 logger.go:63: 1732227474069401962 Lookup    /etc/nsswitch.conf
+2024/11/21 22:17:54 logger.go:63: 1732227474069429826 Lookup    /etc/resolv.conf
+2024/11/21 22:17:54 logger.go:63: 1732227474069457528 Lookup    /dev      
+2024/11/21 22:17:54 logger.go:63: 1732227474069481815 Lookup    /sys      
+2024/11/21 22:17:54 logger.go:63: 1732227474069503466 Lookup    /proc     
+2024/11/21 22:17:54 logger.go:63: 1732227474069532211 Lookup    /tmp      
+2024/11/21 22:17:54 logger.go:63: 1732227474069557349 Lookup    /root     
+2024/11/21 22:17:54 logger.go:63: 1732227474069608386 Lookup    /opt      
+2024/11/21 22:17:54 logger.go:63: 1732227474069632011 Lookup    /opt/lammps
+2024/11/21 22:17:54 logger.go:63: 1732227474069655616 Lookup    /opt/lammps/examples
+2024/11/21 22:17:54 logger.go:63: 1732227474069688379 Lookup    /opt/lammps/examples/reax
+2024/11/21 22:17:54 logger.go:63: 1732227474069714098 Lookup    /opt/lammps/examples/reax/HNS
+2024/11/21 22:17:54 logger.go:63: 1732227474069739316 Lookup    /usr      
+2024/11/21 22:17:54 logger.go:63: 1732227474069763001 Lookup    /usr/bin  
+2024/11/21 22:17:54 logger.go:63: 1732227474069784722 Lookup    /usr/bin/lmp
+2024/11/21 22:17:54 logger.go:63: 1732227474070044848 Open      /usr/bin/lmp	7
+2024/11/21 22:17:54 logger.go:63: 1732227474070124119 Close     /usr/bin/lmp	7
+2024/11/21 22:17:54 logger.go:63: 1732227474070153395 Open      /usr/bin/lmp	18
+2024/11/21 22:17:54 logger.go:63: 1732227474070204683 Lookup    /lib64    
+2024/11/21 22:17:54 logger.go:63: 1732227474070242976 Lookup    /usr/lib64
+2024/11/21 22:17:54 logger.go:63: 1732227474070311627 Lookup    /usr/lib64/ld-linux-x86-64.so.2
+2024/11/21 22:17:54 logger.go:63: 1732227474070383003 Lookup    /lib      
+2024/11/21 22:17:54 logger.go:63: 1732227474070415425 Lookup    /usr/lib  
+2024/11/21 22:17:54 logger.go:63: 1732227474070480238 Lookup    /usr/lib/x86_64-linux-gnu
+2024/11/21 22:17:54 logger.go:63: 1732227474070504184 Lookup    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+2024/11/21 22:17:54 logger.go:63: 1732227474070568767 Close     /usr/bin/lmp	18
+2024/11/21 22:17:54 logger.go:63: 1732227474070589507 Open      /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2	20
+2024/11/21 22:17:54 logger.go:63: 1732227474070638550 Close     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2	20
+2024/11/21 22:17:54 logger.go:63: 1732227474071201624 Open      /usr/bin/lmp	21
+2024/11/21 22:17:54 logger.go:63: 1732227474071440670 Close     /usr/bin/lmp	21
+2024/11/21 22:17:54 logger.go:63: 1732227474071667332 Open      /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2	22
+2024/11/21 22:17:54 logger.go:63: 1732227474071886791 Close     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2	22
+2024/11/21 22:17:54 logger.go:63: 1732227474072401111 Lookup    /opt/software
+2024/11/21 22:17:54 logger.go:63: 1732227474072447971 Lookup    /opt/software/linux-rocky9-x86_64
+2024/11/21 22:17:54 logger.go:63: 1732227474072478579 Lookup    /opt/software/linux-rocky9-x86_64/gcc-11.4.1
+2024/11/21 22:17:54 logger.go:63: 1732227474072505090 Lookup    /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y
+2024/11/21 22:17:54 logger.go:63: 1732227474072549765 Lookup    /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y/lib
+2024/11/21 22:17:54 logger.go:63: 1732227474072574562 Lookup    /opt/software/linux-rocky9-x86_64/gcc-11.4.1/flux-core-0.61.2-va52p5ph7ylanopgk7ranjgtjgc2wb5y/lib/flux
+2024/11/21 22:17:54 logger.go:63: 1732227474074905697 Lookup    /etc/ld.so.cache
+2024/11/21 22:17:54 logger.go:63: 1732227474074946304 Open      /etc/ld.so.cache	23
+2024/11/21 22:17:54 logger.go:63: 1732227474075041646 Close     /etc/ld.so.cache	23
+2024/11/21 22:17:54 logger.go:63: 1732227474075192885 Lookup    /usr/lib/x86_64-linux-gnu/libmpich.so.12
+2024/11/21 22:17:54 logger.go:63: 1732227474075239363 Lookup    /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0
+2024/11/21 22:17:54 logger.go:63: 1732227474075324125 Open      /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0	24
+2024/11/21 22:17:54 logger.go:63: 1732227474075621001 Close     /usr/lib/x86_64-linux-gnu/libmpich.so.12.2.0	24
+2024/11/21 22:17:54 logger.go:63: 1732227474075939268 Lookup    /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474075976599 Lookup    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+2024/11/21 22:17:54 logger.go:63: 1732227474076064947 Open      /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30	25
+2024/11/21 22:17:54 logger.go:63: 1732227474076385088 Close     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30	25
+2024/11/21 22:17:54 logger.go:63: 1732227474076724325 Lookup    /usr/lib/x86_64-linux-gnu/libm.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474076769611 Open      /usr/lib/x86_64-linux-gnu/libm.so.6	26
+2024/11/21 22:17:54 logger.go:63: 1732227474077155647 Close     /usr/lib/x86_64-linux-gnu/libm.so.6	26
+2024/11/21 22:17:54 logger.go:63: 1732227474077511626 Lookup    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474077551282 Open      /usr/lib/x86_64-linux-gnu/libgcc_s.so.1	27
+2024/11/21 22:17:54 logger.go:63: 1732227474077890909 Close     /usr/lib/x86_64-linux-gnu/libgcc_s.so.1	27
+2024/11/21 22:17:54 logger.go:63: 1732227474078144693 Lookup    /usr/lib/x86_64-linux-gnu/libc.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474078187395 Open      /usr/lib/x86_64-linux-gnu/libc.so.6	28
+2024/11/21 22:17:54 logger.go:63: 1732227474078620300 Close     /usr/lib/x86_64-linux-gnu/libc.so.6	28
+2024/11/21 22:17:54 logger.go:63: 1732227474078927927 Lookup    /usr/lib/x86_64-linux-gnu/libhwloc.so.15
+2024/11/21 22:17:54 logger.go:63: 1732227474078979084 Lookup    /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2
+2024/11/21 22:17:54 logger.go:63: 1732227474079067352 Open      /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2	29
+2024/11/21 22:17:54 logger.go:63: 1732227474079357546 Close     /usr/lib/x86_64-linux-gnu/libhwloc.so.15.5.2	29
+2024/11/21 22:17:54 logger.go:63: 1732227474079673138 Lookup    /usr/lib/x86_64-linux-gnu/libfabric.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474079714697 Lookup    /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0
+2024/11/21 22:17:54 logger.go:63: 1732227474079790081 Open      /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0	30
+2024/11/21 22:17:54 logger.go:63: 1732227474080112495 Close     /usr/lib/x86_64-linux-gnu/libfabric.so.1.14.0	30
+2024/11/21 22:17:54 logger.go:63: 1732227474080372211 Lookup    /usr/lib/x86_64-linux-gnu/libudev.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474080408911 Lookup    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2
+2024/11/21 22:17:54 logger.go:63: 1732227474080485467 Open      /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2	31
+2024/11/21 22:17:54 logger.go:63: 1732227474080768406 Close     /usr/lib/x86_64-linux-gnu/libudev.so.1.7.2	31
+2024/11/21 22:17:54 logger.go:63: 1732227474081025717 Lookup    /usr/lib/x86_64-linux-gnu/librdmacm.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474081076263 Lookup    /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0
+2024/11/21 22:17:54 logger.go:63: 1732227474081160734 Open      /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0	32
+2024/11/21 22:17:54 logger.go:63: 1732227474081436640 Close     /usr/lib/x86_64-linux-gnu/librdmacm.so.1.3.39.0	32
+2024/11/21 22:17:54 logger.go:63: 1732227474081678672 Lookup    /usr/lib/x86_64-linux-gnu/libefa.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474081717656 Lookup    /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0
+2024/11/21 22:17:54 logger.go:63: 1732227474081793260 Open      /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0	33
+2024/11/21 22:17:54 logger.go:63: 1732227474082062293 Close     /usr/lib/x86_64-linux-gnu/libefa.so.1.1.39.0	33
+2024/11/21 22:17:54 logger.go:63: 1732227474082320556 Lookup    /usr/lib/x86_64-linux-gnu/libibverbs.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474082374879 Lookup    /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0
+2024/11/21 22:17:54 logger.go:63: 1732227474082454671 Open      /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0	34
+2024/11/21 22:17:54 logger.go:63: 1732227474082747089 Close     /usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.39.0	34
+2024/11/21 22:17:54 logger.go:63: 1732227474083012866 Lookup    /usr/lib/x86_64-linux-gnu/libpsm_infinipath.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474083122194 Lookup    /etc/alternatives
+2024/11/21 22:17:54 logger.go:63: 1732227474083156850 Lookup    /etc/alternatives/libpsm_infinipath.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474083234568 Lookup    /usr/lib/libpsm1
+2024/11/21 22:17:54 logger.go:63: 1732227474083261460 Lookup    /usr/lib/libpsm1/libpsm_infinipath.so.1.16
+2024/11/21 22:17:54 logger.go:63: 1732227474083308479 Open      /usr/lib/libpsm1/libpsm_infinipath.so.1.16	35
+2024/11/21 22:17:54 logger.go:63: 1732227474083620555 Close     /usr/lib/libpsm1/libpsm_infinipath.so.1.16	35
+2024/11/21 22:17:54 logger.go:63: 1732227474083923733 Lookup    /usr/lib/x86_64-linux-gnu/libpsm2.so.2
+2024/11/21 22:17:54 logger.go:63: 1732227474083969069 Lookup    /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2
+2024/11/21 22:17:54 logger.go:63: 1732227474084049442 Open      /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2	36
+2024/11/21 22:17:54 logger.go:63: 1732227474084360465 Close     /usr/lib/x86_64-linux-gnu/libpsm2.so.2.2	36
+2024/11/21 22:17:54 logger.go:63: 1732227474084607046 Lookup    /usr/lib/x86_64-linux-gnu/libnl-3.so.200
+2024/11/21 22:17:54 logger.go:63: 1732227474084648946 Lookup    /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0
+2024/11/21 22:17:54 logger.go:63: 1732227474084721804 Open      /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0	37
+2024/11/21 22:17:54 logger.go:63: 1732227474084994174 Close     /usr/lib/x86_64-linux-gnu/libnl-3.so.200.26.0	37
+2024/11/21 22:17:54 logger.go:63: 1732227474085309425 Lookup    /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200
+2024/11/21 22:17:54 logger.go:63: 1732227474085356004 Lookup    /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0
+2024/11/21 22:17:54 logger.go:63: 1732227474085433251 Open      /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0	38
+2024/11/21 22:17:54 logger.go:63: 1732227474085734666 Close     /usr/lib/x86_64-linux-gnu/libnl-route-3.so.200.26.0	38
+2024/11/21 22:17:54 logger.go:63: 1732227474086095343 Lookup    /usr/lib/x86_64-linux-gnu/libinfinipath.so.4
+2024/11/21 22:17:54 logger.go:63: 1732227474086138947 Lookup    /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0
+2024/11/21 22:17:54 logger.go:63: 1732227474086214431 Open      /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0	39
+2024/11/21 22:17:54 logger.go:63: 1732227474086501758 Close     /usr/lib/x86_64-linux-gnu/libinfinipath.so.4.0	39
+2024/11/21 22:17:54 logger.go:63: 1732227474086766874 Lookup    /usr/lib/x86_64-linux-gnu/librt.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474086805848 Open      /usr/lib/x86_64-linux-gnu/librt.so.1	40
+2024/11/21 22:17:54 logger.go:63: 1732227474087682610 Close     /usr/lib/x86_64-linux-gnu/librt.so.1	40
+2024/11/21 22:17:54 logger.go:63: 1732227474087941824 Lookup    /usr/lib/x86_64-linux-gnu/libpthread.so.0
+2024/11/21 22:17:54 logger.go:63: 1732227474087985027 Open      /usr/lib/x86_64-linux-gnu/libpthread.so.0	41
+2024/11/21 22:17:54 logger.go:63: 1732227474091564091 Close     /usr/lib/x86_64-linux-gnu/libpthread.so.0	41
+2024/11/21 22:17:54 logger.go:63: 1732227474092154106 Lookup    /usr/lib/x86_64-linux-gnu/libdl.so.2
+2024/11/21 22:17:54 logger.go:63: 1732227474092231484 Open      /usr/lib/x86_64-linux-gnu/libdl.so.2	42
+2024/11/21 22:17:54 logger.go:63: 1732227474092752097 Close     /usr/lib/x86_64-linux-gnu/libdl.so.2	42
+2024/11/21 22:17:54 logger.go:63: 1732227474092987976 Lookup    /usr/lib/x86_64-linux-gnu/libuuid.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474093026730 Lookup    /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+2024/11/21 22:17:54 logger.go:63: 1732227474093100070 Open      /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0	43
+2024/11/21 22:17:54 logger.go:63: 1732227474093355287 Close     /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0	43
+2024/11/21 22:17:54 logger.go:63: 1732227474093598020 Lookup    /usr/lib/x86_64-linux-gnu/libnuma.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474093652874 Lookup    /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0
+2024/11/21 22:17:54 logger.go:63: 1732227474093742054 Open      /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0	44
+2024/11/21 22:17:54 logger.go:63: 1732227474094006288 Close     /usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0	44
+2024/11/21 22:17:54 logger.go:63: 1732227474308147033 Lookup    /usr/lib/x86_64-linux-gnu/hwloc
+2024/11/21 22:17:54 logger.go:63: 1732227474308373105 Lookup    /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so
+2024/11/21 22:17:54 logger.go:63: 1732227474308398583 Lookup    /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so
+2024/11/21 22:17:54 logger.go:63: 1732227474308410616 Lookup    /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so
+2024/11/21 22:17:54 logger.go:63: 1732227474308421427 Lookup    /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so
+2024/11/21 22:17:54 logger.go:63: 1732227474308587824 Open      /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so	50
+2024/11/21 22:17:54 logger.go:63: 1732227474308839003 Close     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_opencl.so	50
+2024/11/21 22:17:54 logger.go:63: 1732227474309066016 Open      /etc/ld.so.cache	51
+2024/11/21 22:17:54 logger.go:63: 1732227474309173781 Close     /etc/ld.so.cache	51
+2024/11/21 22:17:54 logger.go:63: 1732227474309326873 Lookup    /usr/lib/x86_64-linux-gnu/libOpenCL.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474309377249 Lookup    /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0
+2024/11/21 22:17:54 logger.go:63: 1732227474309461109 Open      /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0	52
+2024/11/21 22:17:54 logger.go:63: 1732227474309719181 Close     /usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0	52
+2024/11/21 22:17:54 logger.go:63: 1732227474310043670 Open      /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so	53
+2024/11/21 22:17:54 logger.go:63: 1732227474310304878 Close     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_xml_libxml.so	53
+2024/11/21 22:17:54 logger.go:63: 1732227474310496574 Open      /etc/ld.so.cache	54
+2024/11/21 22:17:54 logger.go:63: 1732227474310589821 Close     /etc/ld.so.cache	54
+2024/11/21 22:17:54 logger.go:63: 1732227474310724478 Lookup    /usr/lib/x86_64-linux-gnu/libxml2.so.2
+2024/11/21 22:17:54 logger.go:63: 1732227474310774634 Lookup    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13
+2024/11/21 22:17:54 logger.go:63: 1732227474310850328 Open      /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13	55
+2024/11/21 22:17:54 logger.go:63: 1732227474311169086 Close     /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.13	55
+2024/11/21 22:17:54 logger.go:63: 1732227474311508493 Lookup    /usr/lib/x86_64-linux-gnu/libicuuc.so.70
+2024/11/21 22:17:54 logger.go:63: 1732227474311556304 Lookup    /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1
+2024/11/21 22:17:54 logger.go:63: 1732227474311642078 Open      /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1	56
+2024/11/21 22:17:54 logger.go:63: 1732227474311955956 Close     /usr/lib/x86_64-linux-gnu/libicuuc.so.70.1	56
+2024/11/21 22:17:54 logger.go:63: 1732227474312300533 Lookup    /usr/lib/x86_64-linux-gnu/libz.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474312345649 Lookup    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+2024/11/21 22:17:54 logger.go:63: 1732227474312421063 Open      /usr/lib/x86_64-linux-gnu/libz.so.1.2.11	57
+2024/11/21 22:17:54 logger.go:63: 1732227474312712158 Close     /usr/lib/x86_64-linux-gnu/libz.so.1.2.11	57
+2024/11/21 22:17:54 logger.go:63: 1732227474312971723 Lookup    /usr/lib/x86_64-linux-gnu/liblzma.so.5
+2024/11/21 22:17:54 logger.go:63: 1732227474313015857 Lookup    /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+2024/11/21 22:17:54 logger.go:63: 1732227474313095760 Open      /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5	58
+2024/11/21 22:17:54 logger.go:63: 1732227474313373489 Close     /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5	58
+2024/11/21 22:17:54 logger.go:63: 1732227474313690404 Lookup    /usr/lib/x86_64-linux-gnu/libicudata.so.70
+2024/11/21 22:17:54 logger.go:63: 1732227474313732544 Lookup    /usr/lib/x86_64-linux-gnu/libicudata.so.70.1
+2024/11/21 22:17:54 logger.go:63: 1732227474313818318 Open      /usr/lib/x86_64-linux-gnu/libicudata.so.70.1	59
+2024/11/21 22:17:54 logger.go:63: 1732227474314091719 Close     /usr/lib/x86_64-linux-gnu/libicudata.so.70.1	59
+2024/11/21 22:17:54 logger.go:63: 1732227474315212516 Open      /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so	60
+2024/11/21 22:17:54 logger.go:63: 1732227474315454427 Close     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_gl.so	60
+2024/11/21 22:17:54 logger.go:63: 1732227474315678434 Open      /etc/ld.so.cache	61
+2024/11/21 22:17:54 logger.go:63: 1732227474315782573 Close     /etc/ld.so.cache	61
+2024/11/21 22:17:54 logger.go:63: 1732227474315921708 Lookup    /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0
+2024/11/21 22:17:54 logger.go:63: 1732227474315997934 Lookup    /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0
+2024/11/21 22:17:54 logger.go:63: 1732227474316087114 Open      /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0	62
+2024/11/21 22:17:54 logger.go:63: 1732227474316362829 Close     /usr/lib/x86_64-linux-gnu/libXNVCtrl.so.0.0.0	62
+2024/11/21 22:17:54 logger.go:63: 1732227474316649175 Lookup    /usr/lib/x86_64-linux-gnu/libX11.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474316702427 Lookup    /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+2024/11/21 22:17:54 logger.go:63: 1732227474316799462 Open      /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0	63
+2024/11/21 22:17:54 logger.go:63: 1732227474317203162 Close     /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0	63
+2024/11/21 22:17:54 logger.go:63: 1732227474317863982 Lookup    /usr/lib/x86_64-linux-gnu/libXext.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474317952601 Lookup    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+2024/11/21 22:17:54 logger.go:63: 1732227474318052411 Open      /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0	64
+2024/11/21 22:17:54 logger.go:63: 1732227474318477552 Close     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0	64
+2024/11/21 22:17:54 logger.go:63: 1732227474318732738 Lookup    /usr/lib/x86_64-linux-gnu/libxcb.so.1
+2024/11/21 22:17:54 logger.go:63: 1732227474318782984 Lookup    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+2024/11/21 22:17:54 logger.go:63: 1732227474318861284 Open      /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0	65
+2024/11/21 22:17:54 logger.go:63: 1732227474319165624 Close     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0	65
+2024/11/21 22:17:54 logger.go:63: 1732227474319497086 Lookup    /usr/lib/x86_64-linux-gnu/libXau.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474319540749 Lookup    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+2024/11/21 22:17:54 logger.go:63: 1732227474319618567 Open      /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0	66
+2024/11/21 22:17:54 logger.go:63: 1732227474319861972 Close     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0	66
+2024/11/21 22:17:54 logger.go:63: 1732227474320126716 Lookup    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6
+2024/11/21 22:17:54 logger.go:63: 1732227474320173816 Lookup    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+2024/11/21 22:17:54 logger.go:63: 1732227474320252085 Open      /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0	67
+2024/11/21 22:17:54 logger.go:63: 1732227474320508875 Close     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0	67
+2024/11/21 22:17:54 logger.go:63: 1732227474320763601 Lookup    /usr/lib/x86_64-linux-gnu/libbsd.so.0
+2024/11/21 22:17:54 logger.go:63: 1732227474320815610 Lookup    /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5
+2024/11/21 22:17:54 logger.go:63: 1732227474320895001 Open      /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5	68
+2024/11/21 22:17:54 logger.go:63: 1732227474321225151 Close     /usr/lib/x86_64-linux-gnu/libbsd.so.0.11.5	68
+2024/11/21 22:17:54 logger.go:63: 1732227474321479766 Lookup    /usr/lib/x86_64-linux-gnu/libmd.so.0
+2024/11/21 22:17:54 logger.go:63: 1732227474321537667 Lookup    /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5
+2024/11/21 22:17:54 logger.go:63: 1732227474321616748 Open      /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5	69
+2024/11/21 22:17:54 logger.go:63: 1732227474321870301 Close     /usr/lib/x86_64-linux-gnu/libmd.so.0.0.5	69
+2024/11/21 22:17:54 logger.go:63: 1732227474322511744 Open      /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so	70
+2024/11/21 22:17:54 logger.go:63: 1732227474322767823 Close     /usr/lib/x86_64-linux-gnu/hwloc/hwloc_pci.so	70
+2024/11/21 22:17:54 logger.go:63: 1732227474322967503 Open      /etc/ld.so.cache	71
+2024/11/21 22:17:54 logger.go:63: 1732227474323071021 Close     /etc/ld.so.cache	71
+2024/11/21 22:17:54 logger.go:63: 1732227474323211008 Lookup    /usr/lib/x86_64-linux-gnu/libpciaccess.so.0
+2024/11/21 22:17:54 logger.go:63: 1732227474323263628 Lookup    /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1
+2024/11/21 22:17:54 logger.go:63: 1732227474323339412 Open      /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1	72
+2024/11/21 22:17:54 logger.go:63: 1732227474323582175 Close     /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1	72
+2024/11/21 22:17:54 logger.go:63: 1732227474620217542 Lookup    /run      
+2024/11/21 22:17:54 logger.go:63: 1732227474626750579 Lookup    /var      
+2024/11/21 22:17:54 logger.go:63: 1732227474626806596 Lookup    /var/run  
+2024/11/21 22:17:54 logger.go:63: 1732227474628170537 Lookup    /etc/gai.conf
+2024/11/21 22:17:54 logger.go:63: 1732227474628221734 Open      /etc/gai.conf	49
+2024/11/21 22:17:54 logger.go:63: 1732227474628386629 Close     /etc/gai.conf	49
+2024/11/21 22:17:54 logger.go:63: 1732227474638328536 Lookup    /usr/share
+2024/11/21 22:17:54 logger.go:63: 1732227474638456119 Lookup    /usr/share/misc
+2024/11/21 22:17:54 logger.go:63: 1732227474657184060 Open      /etc/ld.so.cache	73
+2024/11/21 22:17:54 logger.go:63: 1732227474657303788 Close     /etc/ld.so.cache	73
+2024/11/21 22:17:54 logger.go:63: 1732227474666732848 Open      /etc/ld.so.cache	74
+2024/11/21 22:17:54 logger.go:63: 1732227474666845993 Close     /etc/ld.so.cache	74
+2024/11/21 22:17:54 logger.go:63: 1732227474667835721 Open      /etc/ld.so.cache	75
+2024/11/21 22:17:54 logger.go:63: 1732227474667965999 Close     /etc/ld.so.cache	75
+2024/11/21 22:17:54 logger.go:63: 1732227474668910540 Open      /etc/ld.so.cache	76
+2024/11/21 22:17:54 logger.go:63: 1732227474669015390 Close     /etc/ld.so.cache	76
+2024/11/21 22:17:54 logger.go:63: 1732227474669769468 Open      /etc/ld.so.cache	77
+2024/11/21 22:17:54 logger.go:63: 1732227474669870521 Close     /etc/ld.so.cache	77
+2024/11/21 22:17:54 logger.go:63: 1732227474670670636 Open      /etc/ld.so.cache	78
+2024/11/21 22:17:54 logger.go:63: 1732227474670772070 Close     /etc/ld.so.cache	78
+2024/11/21 22:17:54 logger.go:63: 1732227474671557277 Open      /etc/ld.so.cache	79
+2024/11/21 22:17:54 logger.go:63: 1732227474671662327 Close     /etc/ld.so.cache	79
+2024/11/21 22:17:54 logger.go:63: 1732227474672428749 Open      /etc/ld.so.cache	80
+2024/11/21 22:17:54 logger.go:63: 1732227474672533388 Close     /etc/ld.so.cache	80
+2024/11/21 22:17:54 logger.go:63: 1732227474673316732 Open      /etc/ld.so.cache	81
+2024/11/21 22:17:54 logger.go:63: 1732227474673418366 Close     /etc/ld.so.cache	81
+2024/11/21 22:17:54 logger.go:63: 1732227474674220766 Open      /etc/ld.so.cache	82
+2024/11/21 22:17:54 logger.go:63: 1732227474674324814 Close     /etc/ld.so.cache	82
+2024/11/21 22:17:54 logger.go:63: 1732227474675093279 Open      /etc/ld.so.cache	83
+2024/11/21 22:17:54 logger.go:63: 1732227474675241652 Close     /etc/ld.so.cache	83
+2024/11/21 22:17:54 logger.go:63: 1732227474676032671 Open      /etc/ld.so.cache	84
+2024/11/21 22:17:54 logger.go:63: 1732227474676139094 Close     /etc/ld.so.cache	84
+2024/11/21 22:17:54 logger.go:63: 1732227474676911887 Open      /etc/ld.so.cache	85
+2024/11/21 22:17:54 logger.go:63: 1732227474677032768 Close     /etc/ld.so.cache	85
+2024/11/21 22:17:54 logger.go:63: 1732227474677828946 Open      /etc/ld.so.cache	86
+2024/11/21 22:17:54 logger.go:63: 1732227474677928195 Close     /etc/ld.so.cache	86
+2024/11/21 22:17:54 logger.go:63: 1732227474678703193 Open      /etc/ld.so.cache	87
+2024/11/21 22:17:54 logger.go:63: 1732227474678803925 Close     /etc/ld.so.cache	87
+2024/11/21 22:17:54 logger.go:63: 1732227474679562281 Open      /etc/ld.so.cache	88
+2024/11/21 22:17:54 logger.go:63: 1732227474679661170 Close     /etc/ld.so.cache	88
+2024/11/21 22:17:54 logger.go:63: 1732227474680413614 Open      /etc/ld.so.cache	89
+2024/11/21 22:17:54 logger.go:63: 1732227474680511040 Close     /etc/ld.so.cache	89
+2024/11/21 22:17:54 logger.go:63: 1732227474692468791 Lookup    /opt/lammps/examples/reax/HNS/in.reaxc.hns
+2024/11/21 22:17:54 logger.go:63: 1732227474692670456 Open      /opt/lammps/examples/reax/HNS/in.reaxc.hns	90
+2024/11/21 22:17:54 logger.go:63: 1732227474694033645 Lookup    /opt/lammps/examples/reax/HNS/data.hns-equil
+2024/11/21 22:17:54 logger.go:63: 1732227474694096635 Open      /opt/lammps/examples/reax/HNS/data.hns-equil	91
+2024/11/21 22:17:54 logger.go:63: 1732227474695643475 Close     /opt/lammps/examples/reax/HNS/data.hns-equil	91
+2024/11/21 22:17:54 logger.go:63: 1732227474707946695 Close     /opt/lammps/examples/reax/HNS/in.reaxc.hns	90
+2024/11/21 22:17:54 logger.go:63: 1732227474708322251 Complete  /tmp/out/lammps-recording.out
+2024/11/21 22:17:54 logger.go:63: 1732227474708563601 Lookup    /sbin     
+2024/11/21 22:17:54 logger.go:63: 1732227474708594049 Lookup    /root     
+2024/11/21 22:17:54 logger.go:63: 1732227474708623615 Lookup    /srv      
+2024/11/21 22:17:54 logger.go:63: 1732227474708645517 Lookup    /media    
+2024/11/21 22:17:54 logger.go:63: 1732227474708665074 Lookup    /libx32   
+2024/11/21 22:17:54 logger.go:63: 1732227474708675254 Lookup    /lib64    
+2024/11/21 22:17:54 logger.go:63: 1732227474708681105 Lookup    /etc      
+2024/11/21 22:17:54 logger.go:63: 1732227474708688820 Lookup    /proc     
+2024/11/21 22:17:54 logger.go:63: 1732227474708695152 Lookup    /usr      
+2024/11/21 22:17:54 logger.go:63: 1732227474708714569 Lookup    /lib32    
+2024/11/21 22:17:54 logger.go:63: 1732227474708737703 Lookup    /boot     
+2024/11/21 22:17:54 logger.go:63: 1732227474708745337 Lookup    /var      
+2024/11/21 22:17:54 logger.go:63: 1732227474708752150 Lookup    /tmp      
+2024/11/21 22:17:54 logger.go:63: 1732227474708757621 Lookup    /mnt      
+2024/11/21 22:17:54 logger.go:63: 1732227474708764083 Lookup    /dev      
+2024/11/21 22:17:54 logger.go:63: 1732227474708770105 Lookup    /opt      
+2024/11/21 22:17:54 logger.go:63: 1732227474708788530 Lookup    /home     
+2024/11/21 22:17:54 logger.go:63: 1732227474708794561 Lookup    /lib      
+2024/11/21 22:17:54 logger.go:63: 1732227474708805893 Lookup    /sys      
+2024/11/21 22:17:54 logger.go:63: 1732227474708817675 Lookup    /bin      
+2024/11/21 22:17:54 logger.go:63: 1732227474708825090 Lookup    /run      
+2024/11/21 22:17:54 logger.go:63: 1732227474708831482 Lookup    /flux_operator
+2024/11/21 22:17:54 logger.go:63: 1732227474708836992 Lookup    /product_name
+2024/11/21 22:17:54 logger.go:63: 1732227474708903349 Lookup    /product_uuid

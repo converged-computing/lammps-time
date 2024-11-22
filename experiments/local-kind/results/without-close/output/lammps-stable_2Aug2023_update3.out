@@ -1,0 +1,18 @@
+⭐️ Filesystem Recorder (fs-record)
+Mount directory /tmp/compatlib2637688572
+Mounted!
+proot -S /tmp/compatlib2637688572 -0 lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxff.hns -nocite
+WARNING on proc 0: Cannot open log.lammps for writing: Read-only file system (src/lammps.cpp:508)
+ERROR on proc 0: Cannot open input script ./in.reaxff.hns: No such file or directory (src/lammps.cpp:542)
+Last command: (unknown)
+Abort(1) on node 0 (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+Error running command: exit status 1
+Cleaning up /tmp/compatlib2637688572...
+Output file written to /tmp/out/lammps-recording.out
+panic: Error running command: exit status 1
+
+goroutine 1 [running]:
+log.Panicf({0x5633d3?, 0x8?}, {0xc0000e5f28?, 0x1d?, 0x1?})
+	/opt/hostedtoolcache/go/1.23.3/x64/src/log/log.go:439 +0x65
+main.main()
+	/home/runner/work/compat-lib/compat-lib/cmd/record/record.go:72 +0x68a

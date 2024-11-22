@@ -1,7 +1,7 @@
 ⭐️ Filesystem Recorder (fs-record)
-Mount directory /tmp/compatlib370660306
+Mount directory /tmp/recordfs3679570350
 Mounted!
-proot -S /tmp/compatlib370660306 -0 lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxc.hns -nocite
+proot -S /tmp/recordfs3679570350 -0 /usr/bin/lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxc.hns -nocite
 WARNING on proc 0: Cannot open log.lammps for writing: Read-only file system (src/lammps.cpp:508)
 LAMMPS (2 Aug 2023 - Update 2)
 OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
@@ -59,20 +59,20 @@ Per MPI rank memory allocation (min/avg/max) = 876.7 | 876.7 | 876.7 Mbytes
         80   296.72363     -113.26783      6678.193      -111.56871     -1.699117       219350.94    
         90   301.41818     -113.28184      8078.0725     -111.58311     -1.6987273      219350.94    
        100   303.68662     -113.28857      10072.331     -111.59016     -1.6984125      219350.94    
-Loop time of 97.379 on 1 procs for 100 steps with 19456 atoms
+Loop time of 102.824 on 1 procs for 100 steps with 19456 atoms
 
-Performance: 0.009 ns/day, 2704.974 hours/ns, 1.027 timesteps/s, 19.980 katom-step/s
+Performance: 0.008 ns/day, 2856.231 hours/ns, 0.973 timesteps/s, 18.922 katom-step/s
 100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 66.113     | 66.113     | 66.113     |   0.0 | 67.89
-Neigh   | 0.83302    | 0.83302    | 0.83302    |   0.0 |  0.86
-Comm    | 0.016859   | 0.016859   | 0.016859   |   0.0 |  0.02
-Output  | 0.0015616  | 0.0015616  | 0.0015616  |   0.0 |  0.00
-Modify  | 30.413     | 30.413     | 30.413     |   0.0 | 31.23
-Other   |            | 0.001947   |            |       |  0.00
+Pair    | 70.227     | 70.227     | 70.227     |   0.0 | 68.30
+Neigh   | 0.86433    | 0.86433    | 0.86433    |   0.0 |  0.84
+Comm    | 0.018445   | 0.018445   | 0.018445   |   0.0 |  0.02
+Output  | 0.0015659  | 0.0015659  | 0.0015659  |   0.0 |  0.00
+Modify  | 31.711     | 31.711     | 31.711     |   0.0 | 30.84
+Other   |            | 0.002126   |            |       |  0.00
 
 Nlocal:          19456 ave       19456 max       19456 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -85,7 +85,7 @@ Total # of neighbors = 5746895
 Ave neighs/atom = 295.37906
 Neighbor list builds = 5
 Dangerous builds not checked
-Total wall time: 0:01:39
+Total wall time: 0:01:45
 Command is done running
-Cleaning up /tmp/compatlib370660306...
+Cleaning up /tmp/recordfs3679570350...
 Output file written to /tmp/out/lammps-recording.out

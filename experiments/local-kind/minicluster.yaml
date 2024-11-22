@@ -13,7 +13,7 @@ spec:
       commands:
         pre: |
           apt-get install -y wget
-          wget -O /usr/local/bin/fs-record https://github.com/compspec/compat-lib/releases/download/2024-11-17/fs-record
+          wget -O /usr/local/bin/fs-record https://github.com/compspec/compat-lib/releases/download/2024-11-21/fs-record
           chmod +x /usr/local/bin/fs-record
           echo '#!/bin/bash' >> ./run-lammps.sh
           echo "mkdir -p /tmp/out" >> ./run-lammps.sh

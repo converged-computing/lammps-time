@@ -24,6 +24,7 @@ python run-experiment.py
 Then parse the single result files into output files for each.
 
 ```bash
+# gets data from data/raw and parses into results/recordings and results/output
 python parse-results.py
 ```
 
@@ -41,11 +42,21 @@ compatlib run-models -d ./results $(find ./results/recordings -name *.out)
 ```
 ```console
 Markov Model Results
-  Leave one out correct: 4999
-    Leave one out wrong: 1148
-          correct/total: 0.8132422319830812
+  Leave one out correct: 4928
+    Leave one out wrong: 1219
+          correct/total: 0.8016918822189686
 Frequency Results
-  Leave one out correct: 617
-    Leave one out wrong: 5533
-          correct/total: 0.10032520325203252
+  Leave one out correct: 645
+    Leave one out wrong: 5505
+          correct/total: 0.1048780487804878
 ```
+
+Finally, generate a perfetto trace file to visualize events with times:
+
+```bash
+compatlib to-perfetto -d ./results $(find ./results/recordings -name *.out)
+```
+
+What I see in the above is mostly that the data files take up most of the open time, and the library reads are tiny.
+That said, their presence is still important. I think this approach would do better with something that is reading data,
+although I'm not sure I have a good solution with fuse-go that isn't able to keep track of a unique identifier.

@@ -1,0 +1,30 @@
+apiVersion: flux-framework.org/v1alpha2
+kind: MiniCluster
+metadata:
+  name: flux-sample
+spec:
+  size: 4
+  logging:
+    quiet: true
+
+  containers:
+    - image: ghcr.io/converged-computing/lammps-time-fuse:patch_3Nov2022
+      workingDir: /opt/lammps/examples/reaxff/HNS
+      commands:
+        pre: |
+          apt-get install -y wget
+          wget -O /usr/local/bin/fs-record https://github.com/compspec/compat-lib/releases/download/2024-11-21/fs-record
+          chmod +x /usr/local/bin/fs-record
+          echo '#!/bin/bash' >> ./run-lammps.sh
+          echo "mkdir -p /tmp/out" >> ./run-lammps.sh
+          echo 'echo "START LOG"' >> ./run-lammps.sh
+          echo 'fs-record --out /tmp/out/lammps-recording.out lmp -v x 4 -v y 4 -v z 4 -in ./in.reaxc.hns -nocite' >> ./run-lammps.sh
+          chmod +x ./run-lammps.sh
+        post: |
+          echo "START RECORDING ====="
+          cat /tmp/out/lammps-recording.out
+      command: /bin/bash ./run-lammps.sh
+      securityContext:
+        privileged: true
+        addCapabilities:
+          - SYS_ADMIN

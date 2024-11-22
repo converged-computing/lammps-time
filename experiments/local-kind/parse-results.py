@@ -13,7 +13,7 @@ def get_parser():
     parser.add_argument(
         "--indir",
         help="Input data directory",
-        default=os.path.join(here, "data"),
+        default=os.path.join(here, "data", "raw"),
     )
     parser.add_argument(
         "--outdir",
